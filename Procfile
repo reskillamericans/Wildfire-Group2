@@ -1,0 +1,1 @@
+web: gunicorn wildfire2.wsgi
