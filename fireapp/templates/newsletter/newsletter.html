@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>news letter</h1>
+    <div>
+        <form method="POST">
+            {{form}}
+            {% csrf_token %}
+            <input type="submit" value="Subscribe to newsletter">
+        </form>
+    </div>
+{% endblock%}
