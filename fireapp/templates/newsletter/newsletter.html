@@ -1,9 +1,11 @@
-{% extends 'base.html' %}
-
-
 {% block content %}
-    <h1>news letter</h1>
+    <h1>newsletter subscription</h1>
     <div>
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
         <form method="POST">
             {{form}}
             {% csrf_token %}
