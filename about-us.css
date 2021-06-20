@@ -36,7 +36,7 @@ body {
     text-decoration: none;
 }
 
-.right-header a:visited {
+#active {
     color: #FFD84D;
 }
 
@@ -59,6 +59,12 @@ body {
     color: #FFFFFF;
     padding-left: 75px;
     text-decoration: none;
+}
+
+#active2 {
+    text-decoration-line: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2px;
 }
 
 .content {
