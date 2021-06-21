@@ -36,6 +36,10 @@ body {
     text-decoration: none;
 }
 
+.right-header a:hover {
+    color: #FFD84D;
+}
+
 #active {
     color: #FFD84D;
 }
@@ -59,6 +63,10 @@ body {
     color: #FFFFFF;
     padding-left: 75px;
     text-decoration: none;
+}
+
+.top-bar a:hover {
+    color: #FFD84D;
 }
 
 #active2 {
@@ -231,7 +239,7 @@ body {
     overflow: hidden;
     text-align: left;
     margin-right: 10px;
-    padding: 0px 75px 60px 0px;
+    padding: 0px 75px 85px 0px;
 }
 
 .proj-desc b {
@@ -361,6 +369,10 @@ i {
         font-size: 16px;
         line-height: 20px;
         padding-bottom: 20px;
+    }
+
+    .proj-desc p {
+        padding: 0px 75px 25px 0px;
     }
     
    input#eaddress {
