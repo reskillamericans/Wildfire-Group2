@@ -1,0 +1,410 @@
+/* Box sizing rules and reset*/
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"],
+li {
+	list-style: none;
+	font-size: 1.6rem;
+	color: var(--wht);
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html {
+	font-family: "Rubik", sans-serif;
+	/* resetting font size to 10px makes rem math much easier*/
+	font-size: 10px;
+	box-sizing: border-box;
+}
+/*Set secting heading font*/
+button {
+	font-family: "Rubik", sans-serif;
+}
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+h1 {
+	font-size: 37px;
+	color: var(--wht);
+	text-align: left;
+	line-height: 43.85px;
+	margin-bottom: 1.5rem;
+}
+h2 {
+	font-size: 28px;
+	color: var(--wht);
+	font-weight: 300;
+	line-height: 33.6px;
+	letter-spacing: -0.2%;
+	margin-bottom: 1.5rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+a {
+	text-decoration: none;
+	color: var(--wht);
+	font-size: 1.6rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+/* ########## END GLOBAL ########## */
+
+/* ########## UTILITIES ########## */
+
+:root {
+	--blk: #180126;
+	--wht: #ffffff;
+	--gry: #b8b4b4;
+	--drk-gry: #666666;
+	--ylw: #ffd84c;
+	--org: #f82508;
+	--width: 160rem;
+	--h3: 2.1rem;
+	--h2: 2.8rem;
+	--h1: 3.7rem;
+	--footer-height: 30vh;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.flex-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+body {
+	position: relative;
+	min-height: 100vh;
+}
+.container-full {
+	padding-bottom: var(--footer-height);
+}
+/* ########## NAV ########## */
+header {
+	background: var(--blk);
+}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: var(--width);
+	min-height: 5.2vh;
+	margin: 0 auto;
+	padding-right: 5rem;
+	padding-left: 5rem;
+}
+/* .logo {
+} */
+.nav-ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/* background: red; */
+	width: 30%;
+}
+/* ########## HERO ########## */
+.hero {
+	height: 526px;
+	max-width: 100vw;
+	background: url(/Wildfire-Group2/images/bg-bridge.png) no-repeat center/cover;
+	margin: 0 auto;
+}
+.hero-box {
+	max-width: 827px;
+}
+
+#submit-bar {
+	height: 60px;
+	width: 628px;
+	margin-right: 1rem;
+	font-size: 1.6rem;
+	line-height: 19.2px;
+	letter-spacing: -0.2%;
+	padding: 20px 10px;
+}
+.submit-button {
+	height: 60px;
+	width: 193px;
+	background: var(--ylw);
+	color: var(--blk);
+	font-size: 1.6rem;
+	font-weight: bold;
+	font-family: "Rubik", sans-serif;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: 0.1s all;
+}
+.submit-button:active {
+	transform: scale(0.8);
+}
+
+/* ########## FAQ ACCORDIAN ########## */
+
+main {
+	width: 100%;
+	height: calc(100vh - 526px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* This is to center the accordian container */
+}
+
+.container {
+	width: 100%;
+	max-width: 1136px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.accordian-item {
+	padding-bottom: 2rem;
+	border-bottom: var(--drk-gry) 2px solid;
+	margin-bottom: 1.5rem;
+}
+.accordian-item:target .answer {
+	max-height: 20rem;
+}
+.accordian-item:target .accordian-link .plus-sign {
+	display: none;
+}
+.accordian-item:target .accordian-link .minus-sign {
+	display: block;
+}
+.accordian-link {
+	color: #000000;
+	font-weight: bold;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 1.5rem;
+}
+.answer {
+	font-size: 16px;
+	line-height: 120%;
+	letter-spacing: -0.002em;
+	margin-top: 1rem;
+	max-height: 0;
+	overflow: hidden;
+	position: relative;
+	padding-left: 1.5rem;
+	transition: max-height 650ms ease-in-out;
+}
+.answer::before {
+	content: "";
+	position: absolute;
+	width: 0.3rem;
+	height: 70%;
+	background: #18012677;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+.minus-sign {
+	display: none;
+}
+
+/* ########## FOOTER ########## */
+
+footer {
+	width: 100%;
+	/* height: var(--footer-height); */
+	background: var(--drk-gry);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 30px 114px;
+}
+.container-footer {
+	width: 100%;
+	max-width: calc(var(--width) - 114px);
+}
+.newsletter {
+	width: 100%;
+	/* flex-wrap: wrap; */
+}
+
+.newsletter-content {
+	/* width: 100%; */
+	flex: 1 1 70rem;
+}
+.newsletter-submit {
+	flex: 1 1 70rem;
+}
+.newsletter-ul {
+	align-items: flex-start;
+}
+.newsletter-ul li {
+	font-size: 1.8rem;
+	line-height: 120%;
+	letter-spacing: -0.002em;
+	font-weight: 300;
+	margin-bottom: 1.3rem;
+	list-style: disc;
+}
+.newsletter-h2 {
+	font-size: var(--h2);
+	color: var(--wht);
+	line-height: 33px;
+	font-weight: bold;
+}
+
+/* #newsletter-bar {
+} */
+
+#newsletter-bar {
+	height: 40px;
+	width: 456px;
+	margin-right: 1rem;
+	font-size: 1.6rem;
+	line-height: 19.2px;
+	letter-spacing: -0.2%;
+	padding: 20px 10px;
+	border-radius: 1px;
+}
+.newsletter-button {
+	height: 40px;
+	width: 200px;
+	background: var(--ylw);
+	color: var(--blk);
+	font-size: 1.6rem;
+	font-weight: bold;
+	font-family: "Rubik", sans-serif;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: 0.1s all;
+}
+.newsletter-button:active {
+	transform: scale(0.8);
+}
+
+/* .information {
+
+} */
+
+.info {
+	height: 197px;
+	width: 100%;
+	/* justify-content: space-evenly; */
+}
+.box {
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+	height: 145px;
+	width: 300px;
+}
+.box .fire-h3 {
+	font-size: var(--h3);
+	line-height: 25px;
+	font-weight: bold;
+	color: var(--wht);
+}
+.information {
+	padding-right: 3rem;
+}
+.information-meta p {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+	color: var(--wht);
+}
+.resources li {
+	margin-bottom: 2rem;
+}
+.resources li a {
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 120%;
+	letter-spacing: -0.002em;
+}
+
+.partners h2 {
+	font-size: var(--h2);
+	line-height: 120%;
+	letter-spacing: -0.002em;
+	font-weight: 500;
+	color: var(--wht);
+}
+
+.follow {
+	align-items: flex-start;
+	border-right: none;
+	flex: 1;
+}
+.follow h2 {
+	font-size: var(--h2);
+	line-height: 120%;
+	letter-spacing: -0.002em;
+	font-weight: 500;
+	color: var(--wht);
+}
+.follow i {
+	font-size: 26px;
+	color: var(--ylw);
+}
+.sm-box {
+	justify-content: space-between;
+	width: 50%;
+}
+
+.follow-flex {
+	justify-content: space-between;
+}
+.sm-icons {
+	justify-content: space-between;
+	width: 100%;
+}
