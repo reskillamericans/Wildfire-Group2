@@ -25,7 +25,6 @@ html {
 	/* resetting font size to 10px makes rem math much easier*/
 	font-size: 10px;
 	box-sizing: border-box;
-	/* height: 100%; */
 }
 /*Set secting heading font*/
 h1,
