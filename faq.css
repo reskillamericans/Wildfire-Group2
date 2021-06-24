@@ -144,43 +144,6 @@ nav {
 	color: var(--ylw);
 }
 
-/* ABOUT US HEADER*/
-/* .nav-bar {
-	background-color: #180126;
-	width: 100%;
-	height: auto;
-	font-weight: bold;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-}
-
-.left-header {
-	padding-left: 75px;
-}
-
-.right-header ul {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	list-style-type: none;
-}
-
-.right-header a {
-	color: #ffffff;
-	padding-right: 75px;
-	text-decoration: none;
-}
-
-.right-header a:hover {
-	color: #ffd84d;
-}
-
-#active {
-	color: #ffd84d;
-} */
-
 /* ########## HERO SECTION ########## */
 .container {
 	background: url(/images/bg-bridge.png) no-repeat center/cover;
@@ -490,7 +453,7 @@ footer {
 		margin: auto;
 		height: 51px;
 	}
-	.logo {
+	nav a {
 		flex: 1 1 20rem;
 	}
 	.nav-ul {
