@@ -75,7 +75,7 @@ DATABASES = {
         'USER': 'pythontest',
         'PASSWORD': 'pdai2@2o21SA',
         'HOST': '68.183.121.201',
-        'PORT': '3306',
+        'PORT': 3306,
     }
 }
 
