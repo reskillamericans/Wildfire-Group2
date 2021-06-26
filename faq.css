@@ -8,7 +8,7 @@
 	border: 0;
 }
 
-/* Remove  styles on ul, ol elements with a list role, which suggests default styling will be removed */
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"],
 li {
@@ -25,6 +25,7 @@ html {
 	/* resetting font size to 10px makes rem math much easier*/
 	font-size: 10px;
 	box-sizing: border-box;
+	/* height: 100%; */
 }
 /*Set secting heading font*/
 h1,
@@ -102,7 +103,7 @@ select {
 	--footer-height: 30vh;
 }
 
-/* ########## ORIG NAV ########## */
+/* ########## NAV ########## */
 header {
 	background: var(--blk);
 }
@@ -113,9 +114,8 @@ nav {
 	align-items: center;
 	justify-content: center;
 	width: 90%;
-	margin: 0 auto;
-	padding: 2.5px 0;
-	max-height: 20vh;
+	margin: auto;
+	min-height: 15vh;
 }
 .nav-ul {
 	font-weight: bold;
@@ -133,16 +133,15 @@ nav {
 	color: var(--wht);
 	transition: all 300ms ease-in-out;
 }
-.nav-ul li a:active {
-	color: var(--ylw);
-}
 .nav-ul li a:hover {
 	color: var(--ylw);
 	transform: scale(2);
 }
-#active {
+/* .nav-ul li :hover {
 	color: var(--ylw);
-}
+	transform: scale(2);
+	transition: all 300ms ease-in-out;
+} */
 
 /* ########## HERO SECTION ########## */
 .container {
@@ -440,6 +439,30 @@ footer {
 
 /* ########## MEDIA QUERYS ########## */
 
+/* @media only screen and (min-width: 500px) {
+	.mobile-footer-container {
+		width: 80%;
+		max-width: 750px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.mobile-footer-wrapper {
+		width: 50%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.newsletter-follow-wrapper {
+		width: 50%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+	}
+} */
+
 @media only screen and (min-width: 850px) {
 	.web-footer {
 		display: block;
@@ -451,20 +474,13 @@ footer {
 		justify-content: center;
 		width: 90%;
 		margin: auto;
-		height: 51px;
+		min-height: 7vh;
 	}
-	nav a {
+	.logo {
 		flex: 1 1 20rem;
 	}
 	.nav-ul {
 		flex: 1 1 20rem;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-
-		width: 100%;
-		max-width: 500px;
 	}
 	.container {
 		height: 530px;
@@ -607,9 +623,6 @@ footer {
 	.web-footer-button:hover {
 		background: var(--drk-ylw);
 	}
-	.web-footer-button:active {
-		transform: scale(0.9);
-	}
 	.web-footer-container2 {
 		width: 95%;
 		height: 150px;
@@ -723,37 +736,3 @@ footer {
 		height: 100px;
 	}
 }
-
-/* about us media query */
-/* @media only screen and (max-width: 600px) {
-	/* Hero Container */
-/* .hero-container {
-		background-size: cover;
-	}
-	.top-bar {
-		display: none;
-	}
-
-	.content {
-		grid-template-columns: 100%;
-		padding: 0;
-		text-align: center;
-	}
-
-	.left-content h1 {
-		font-size: 22px;
-		margin: 0px;
-	}
-
-	.left-content p {
-		font-size: 16px;
-		line-height: 20px;
-		padding: 0px 15px 30px 15px;
-	}
-
-	.left-content a {
-		margin-left: 0;
-	}
-	.phone-img {
-		padding: 40px 0px 30px 0px;
-	} */
