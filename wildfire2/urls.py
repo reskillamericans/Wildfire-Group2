@@ -14,6 +14,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', fireapp_views.index, name="homepage"),
     path('fireapp/', include('fireapp.urls')),
+    path('faq/', fireapp_views.faq, name="faq")
 ]
 
 urlpatterns += staticfiles_urlpatterns()

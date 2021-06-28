@@ -3,6 +3,6 @@ from .views import NewsletterView, faq
 
 urlpatterns = [
     path('newsletter/', NewsletterView.as_view(), name="news-letter"),
-    path('faq/', faq, name='fireapp-faq'),
+    # path('faq/', faq, name='fireapp-faq'),
 ]
 
