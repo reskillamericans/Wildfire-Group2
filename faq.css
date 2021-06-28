@@ -125,7 +125,7 @@ nav {
 	justify-content: space-between;
 
 	width: 100%;
-	max-width: 500px;
+	max-width: 460px;
 }
 .nav-ul li a {
 	font-size: 1.6rem;
@@ -142,7 +142,9 @@ nav {
 	transform: scale(2);
 	transition: all 300ms ease-in-out;
 } */
-
+#active {
+	color: var(--ylw);
+}
 /* ########## HERO SECTION ########## */
 .container {
 	background: url(/images/bg-bridge.png) no-repeat center/cover;
@@ -189,6 +191,10 @@ nav {
 	padding: 20px 10px;
 	border-radius: 1px;
 }
+#hero-input-area:focus {
+	outline: var(--ylw) solid 3px;
+}
+
 .hero-input-button {
 	height: 60px;
 	min-height: 60px;
@@ -201,13 +207,13 @@ nav {
 	font-family: "Rubik", sans-serif;
 	border-radius: 2px;
 	cursor: pointer;
-	/* transition: 10ms all; */
 }
 .hero-input-button:hover {
 	background: var(--drk-ylw);
 }
 .hero-input-button:active {
-	transform: scale(0.9);
+	transform: scale(0.8);
+	/* transition: 100ms all ease-in-out; */
 }
 
 /* ########## FAQ ACCORDIAN ########## */
@@ -382,6 +388,9 @@ footer {
 	padding: 20px 10px;
 	border-radius: 1px;
 }
+#newsletter-input-area:focus {
+	outline: var(--ylw) solid 3px;
+}
 .newsletter-input-button {
 	height: 40px;
 	width: 100%;
@@ -439,30 +448,6 @@ footer {
 
 /* ########## MEDIA QUERYS ########## */
 
-/* @media only screen and (min-width: 500px) {
-	.mobile-footer-container {
-		width: 80%;
-		max-width: 750px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.mobile-footer-wrapper {
-		width: 50%;
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-direction: column;
-	}
-	.newsletter-follow-wrapper {
-		width: 50%;
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-direction: column;
-	}
-} */
-
 @media only screen and (min-width: 850px) {
 	.web-footer {
 		display: block;
@@ -474,13 +459,15 @@ footer {
 		justify-content: center;
 		width: 90%;
 		margin: auto;
-		min-height: 7vh;
+		min-height: 44px;
+		/* border: green solid 1px; */
 	}
 	.logo {
 		flex: 1 1 20rem;
 	}
 	.nav-ul {
 		flex: 1 1 20rem;
+		/* border: #f82508 solid 1px; */
 	}
 	.container {
 		height: 530px;
@@ -525,6 +512,7 @@ footer {
 		margin-bottom: 0;
 		/* border: green solid 1px; */
 	}
+
 	.hero-input-button {
 		width: 100%;
 		max-width: 193px;
@@ -604,6 +592,9 @@ footer {
 		letter-spacing: -0.2%;
 		padding: 20px 10px;
 		border-radius: 1px;
+	}
+	#web-footer-input-area:focus {
+		outline: var(--ylw) solid 3px;
 	}
 	.web-footer-button {
 		height: 40px;
