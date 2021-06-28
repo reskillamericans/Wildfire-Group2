@@ -160,6 +160,10 @@ nav {
 	margin: auto;
 }
 
+.top-bar {
+	display: none;
+}
+
 .hero-wrapper h1 {
 	font-size: 2rem;
 	font-weight: 700;
@@ -457,7 +461,7 @@ footer {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		width: 90%;
+		width: 94.1%;
 		margin: auto;
 		min-height: 44px;
 		/* border: green solid 1px; */
@@ -468,9 +472,12 @@ footer {
 	.nav-ul {
 		flex: 1 1 20rem;
 		/* border: #f82508 solid 1px; */
+
+		/* ########## HERO SECTION ########## */
 	}
 	.container {
 		height: 530px;
+		/* border: #f82508 solid 1px; */
 	}
 	.hero-wrapper {
 		width: 80%;
@@ -480,7 +487,35 @@ footer {
 		align-items: flex-start;
 		justify-content: center;
 		flex-direction: column;
+		/* border: green solid 1px; */
 	}
+
+	.top-bar {
+		display: block;
+	}
+	.top-bar ul {
+		display: flex;
+		list-style-type: none;
+		font-size: 1.6rem;
+		margin: 16px 0px 16px;
+	}
+
+	.top-bar a {
+		color: #ffffff;
+		padding-left: 75px;
+		text-decoration: none;
+	}
+
+	.top-bar a:hover {
+		color: #ffd84d;
+	}
+
+	#active2 {
+		text-decoration-line: underline;
+		text-underline-offset: 10px;
+		text-decoration-thickness: 2px;
+	}
+
 	.hero-wrapper h1 {
 		font-size: var(--h1);
 		font-weight: 700;
