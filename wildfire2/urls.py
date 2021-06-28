@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from fireapp import views as fireapp_views
-import fireapp
 
 
 admin.site.site_title=" Reskill wildfire"
