@@ -534,9 +534,7 @@ footer {
 	}
 	.top-bar ul {
 		display: flex;
-
 		font-size: 1.6rem;
-
 		max-width: 620px;
 		display: flex;
 		align-items: center;
@@ -554,30 +552,11 @@ footer {
 	.top-bar a {
 		position: relative;
 		text-decoration: none;
-		padding: 0 10px;
+		padding: 6px 10px;
 	}
-	a:after {
-		content: "";
-		position: absolute;
-		background-color: var(--ylw);
-		height: 3px;
-		width: 0;
-		left: 0;
-		bottom: -10px;
-	}
-	/* a:hover:after {
-		width: 100%;
-		padding: 25 25px;
-	} */
-	.top-bar a:active:after,
-	.top-bar a:focus:after {
-		content: "";
-		position: absolute;
-		background-color: var(--ylw);
-		height: 3px;
-		width: 100%;
-		left: 0;
-		bottom: -10px;
+	.current {
+		border-bottom: 3px var(--wht) solid;
+		padding-bottom: 25px;
 	}
 	/* ########## WEB FOOTER ########## */
 	main {
