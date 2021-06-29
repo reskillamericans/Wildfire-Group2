@@ -70,6 +70,16 @@ body {
 
 .top-bar a:hover {
     color: #FFD84D;
+	text-decoration-line: underline;
+	text-underline-offset: 10px;
+	text-decoration-thickness: 2px;
+}
+
+.top-bar a:active {
+    color: #FFD84D;
+	text-decoration-line: underline;
+	text-underline-offset: 10px;
+	text-decoration-thickness: 2px;	
 }
 
 #active2 {
