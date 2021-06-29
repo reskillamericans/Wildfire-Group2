@@ -48,6 +48,9 @@ body {
 
 #active {
   color: #ffd84d;
+  text-decoration-line: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 2px;
 }
 
 .hero {
@@ -168,6 +171,7 @@ body {
 #name {
   width: 330px;
   height: 30px;
+	border: 1px solid #b8b484;
 }
 
 #name::placeholder {
@@ -229,6 +233,7 @@ body {
 #number {
   width: 330px;
   height: 30px;
+	border: 1px solid #b8b484;
 }
 
 #message {
@@ -243,6 +248,7 @@ body {
   height: 30px;
   margin-left: 467px;
   margin-bottom: 50px;
+	border: 1px solid #b8b484;
 }
 
 .btn-contact {
