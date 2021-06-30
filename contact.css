@@ -555,6 +555,19 @@ footer {
   .btn {
     background-color: red;
   }
+
+	#active {
+		color: red;
+		text-decoration-line: underline;
+		text-underline-offset: 10px;
+		text-decoration-thickness: 2px;
+	}
+
+	.right-header a {
+		color: #ffffff;
+		padding-right: 5px;
+		text-decoration: none;
+	}
 }
 
 @media only screen and (min-width: 850px) {
