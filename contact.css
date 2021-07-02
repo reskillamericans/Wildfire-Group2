@@ -162,7 +162,7 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: 16px;
-  line-height: 19.2px;
+  line-height: 26px;
   letter-spacing: -0.2%;
   color: #180126;
 }
@@ -235,9 +235,10 @@ body {
 }
 
 #number {
-  width: 330px;
+  width: 320px;
   height: 30px;
 	border: 1px solid #b8b484;
+	margin-left: 10px;
 }
 
 #message {
@@ -255,9 +256,16 @@ body {
 	border: 1px solid #b8b484;
 }
 
+#name, #number, #message, #email {
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+
 .btn-contact {
-  width: 226px;
-  height: 30px;
+  height: 40px;
+  width: 72%;
+  max-width: 200px;
+  min-width: 150px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
@@ -268,6 +276,7 @@ body {
   border-radius: 2px;
   border: none;
   background-color: #ffd84d;
+  margin-left: 10px;
 }
 
 .container {
@@ -290,11 +299,11 @@ body {
 .l-mail p {
   color: #000000;
   width: 203px;
-  height: 57px;
+  height: auto;
   font-family: 'Rubik';
   font-style: normal;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 25px;
   letter-spacing: -0.2%;
 }
 
@@ -317,7 +326,7 @@ body {
   font-family: 'Rubik';
   font-style: normal;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 25px;
   letter-spacing: -0.2%;
   margin-left: 25px;
 }
@@ -341,12 +350,15 @@ body {
   font-family: 'Rubik';
   font-style: normal;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 25px;
   letter-spacing: -0.2%;
   margin-bottom: 50px;
   margin-left: 25px;
 }
 
+input, #textarea {
+	font-size: 16px;
+}
 
 /*footer*/
 
@@ -559,9 +571,13 @@ footer {
 /* Media Queries */
 
 /* Ipad Pro Size */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1150px) {
 	.top-bar ul {
 		margin: 0 0 0 16px;
+	}
+
+	.hero {
+		height: auto;
 	}
 	.content {
 		display: grid;
@@ -584,6 +600,7 @@ footer {
 	}
 	.btn {
 		margin: auto;
+		margin-bottom: 40px;
 	}
 
 	.contact-us, .form-content, #message, #email, .name-number {
@@ -602,6 +619,7 @@ footer {
 		margin-top: 10px;
 		margin-bottom: 0px;
 		font-size: 22px;
+		line-height: 26px;
 	}
 	#name {
 		margin-right: 10px;
@@ -618,8 +636,12 @@ footer {
 		text-align: center;
 	}
 	#email {
-		width: 20%;
+		width: 25%;
 		text-align: left;
+		margin-left: -65px;
+	}
+	.btn-contact {
+		max-width: 175px;
 	}
 	.container {
 		justify-content: center;
@@ -636,6 +658,11 @@ footer {
 	.top-bar ul {
 		margin: 0 0 0 16px;
 	}
+
+	.hero {
+		height: auto;
+	}
+
 	.content {
 		display: grid;
 		grid-template-columns: 100%;
@@ -653,6 +680,10 @@ footer {
 		height: auto;
 		margin: 20px;
 		font-size: 18px;
+	}
+
+	.btn {
+		margin-bottom: 40px;
 	}
 
 	.contact-us, .form-content, #message, #email, .name-number {
@@ -679,7 +710,7 @@ footer {
 		width: 85%;
 		max-width: 85%;
 		margin-bottom: 10px;
-		text-align: left;
+		text-align: left;	
 	}
 	.message {
 		text-align: center;
@@ -687,9 +718,13 @@ footer {
 	.subscribe {
 		text-align: center;
 	}
+	.btn-contact {
+		max-width: 300px;
+	}
 	#email {
-		width: 30%;
+		width: 40%;
 		text-align: left;
+		margin-left: 0px;
 	}
 	.container {
 		justify-content: center;
@@ -704,9 +739,8 @@ footer {
 
 @media only screen and (max-width:600px) {
   .btn {
-    background-color: red;
 	width: auto;
-	margin: 20px;
+	margin: 10px 20px 40px 20px;
   }
   .nav-bar {
 	  display: grid;
@@ -741,12 +775,14 @@ footer {
 	}
 	.hero {
 		background-size: cover;
+		height: auto;
 	}
 	.content {
 		display: grid;
 		grid-template-columns: 100%;
 		padding: 0;
 		text-align: center;
+	
 	}
 	.content h1 {
 		margin: 10px 0px;
@@ -785,6 +821,9 @@ footer {
 	#name {
 		margin-right: 0;
 	}
+	#number {
+		margin-left: 0px;
+	}
 	.message {
 		text-align: center;
 	}
@@ -793,6 +832,9 @@ footer {
 	}
 	#email {
 		width: 85%;
+	}
+	.btn-contact {
+		max-width: 295px;
 	}
 	
 	.container {
@@ -812,6 +854,7 @@ footer {
 	.l-phone {
 		margin-bottom: 20px;
 	}
+
 }
 
 /* Footer */
