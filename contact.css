@@ -259,6 +259,8 @@ body {
 #name, #number, #message, #email {
 	border-radius: 5px;
 	margin-bottom: 15px;
+	padding: 1.3em;
+	font-size: 16px;
 }
 
 .btn-contact {
