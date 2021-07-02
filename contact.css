@@ -172,6 +172,7 @@ body {
   width: 330px;
   height: 30px;
 	border: 1px solid #b8b484;
+	padding: 1.3em;
 }
 
 #name::placeholder {
@@ -234,6 +235,7 @@ body {
   width: 330px;
   height: 30px;
 	border: 1px solid #b8b484;
+	padding: 1.3em;
 }
 
 #message {
@@ -249,6 +251,7 @@ body {
   margin-left: 467px;
   margin-bottom: 50px;
 	border: 1px solid #b8b484;
+	padding: 1.3em;
 }
 
 .btn-contact {
