@@ -25,7 +25,7 @@ body {
 .left-header {
   width: 70px;
   height: 70px;
-  padding-left: 114px;
+  padding-left: 75px;
 }
 
 .right-header ul {
@@ -48,9 +48,6 @@ body {
 
 #active {
   color: #ffd84d;
-  text-decoration-line: underline;
-  text-underline-offset: 10px;
-  text-decoration-thickness: 2px;
 }
 
 .hero {
@@ -64,7 +61,7 @@ body {
 .top-bar ul {
   display: flex;
   list-style-type: none;
-  margin-left: 45px;
+  margin: 16px 0px 16px;
   font-family: 'Rubik';
   font-style: normal;
   line-height: 19px;
@@ -79,6 +76,13 @@ body {
 
 .top-bar a:hover {
   color: #ffd84d;
+}
+
+.top-bar a:active {
+	color: #FFD84D;
+	text-decoration-line: underline;
+	text-underline-offset: 10px;
+	text-decoration-thickness: 2px;
 }
 
 #active2 {
@@ -343,6 +347,7 @@ body {
   margin-left: 25px;
 }
 
+
 /*footer*/
 
 *,
@@ -551,25 +556,265 @@ footer {
 	transform: scale(1.1);
 }
 
+/* Media Queries */
+
+/* Ipad Pro Size */
+@media only screen and (max-width: 1100px) {
+	.top-bar ul {
+		margin: 0 0 0 16px;
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.content h1 {
+		margin: 10px 0 0 0;
+		padding: 20px 0 0 0;
+		width: auto;
+		font-size: 40px;
+	}
+	.content h3 {
+		padding: 0px 15px;
+		width: auto;
+		height: auto;
+		margin: 20px;
+		font-size: 22px;
+	}
+	.btn {
+		margin: auto;
+	}
+
+	.contact-us, .form-content, #message, #email, .name-number {
+		margin-left: 15px;
+		margin-right: 15px;
+		width: auto;
+		text-align: center;
+	}
+	
+	br {
+		display: none;
+	}
+	.form-content {
+		padding-bottom: 10px;
+		height: auto;
+		margin-top: 10px;
+		margin-bottom: 0px;
+		font-size: 22px;
+	}
+	#name {
+		margin-right: 10px;
+	}
+	#message {
+		width: 65%;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	.message {
+		text-align: center;
+	}
+	.subscribe {
+		text-align: center;
+	}
+	#email {
+		width: 20%;
+		text-align: left;
+	}
+	.container {
+		justify-content: center;
+		margin-left: 60px;
+	}
+	.l-mail h3, .l-email h3, .l-phone h3 {
+		margin-bottom: 10px;
+	}
+}
+
+
+/* Tablet Sizes */
+@media only screen and (max-width: 992px) {
+	.top-bar ul {
+		margin: 0 0 0 16px;
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.content h1 {
+		margin: 10px 0 0 0;
+		padding: 20px 0 0 0;
+		width: auto;
+	}
+	.content h3 {
+		padding: 0px 15px;
+		width: auto;
+		height: auto;
+		margin: 20px;
+		font-size: 18px;
+	}
+
+	.contact-us, .form-content, #message, #email, .name-number {
+		margin-left: 15px;
+		margin-right: 15px;
+		width: auto;
+		text-align: center;
+	}
+	
+	br {
+		display: none;
+	}
+	.form-content {
+		padding-bottom: 10px;
+		height: auto;
+		margin-top: 10px;
+		margin-bottom: 0px;
+		font-size: 16px;
+	}
+	#name, #number {
+		width: 43%;
+	}
+	#message {
+		width: 85%;
+		max-width: 85%;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	.message {
+		text-align: center;
+	}
+	.subscribe {
+		text-align: center;
+	}
+	#email {
+		width: 30%;
+		text-align: left;
+	}
+	.container {
+		justify-content: center;
+		margin-left: 50px;
+	}
+	.l-mail h3, .l-email h3, .l-phone h3 {
+		margin-bottom: 10px;
+	}
+}
+
+
+
 @media only screen and (max-width:600px) {
   .btn {
     background-color: red;
+	width: auto;
+	margin: 20px;
+  }
+  .nav-bar {
+	  display: grid;
+	  justify-content: center;
+  }
+  .left-header, .right-header ul {
+	padding-left: 0px;
+	padding-bottom: 10px;
+  }
+  .left-header {
+	justify-self: center;
   }
 
-	#active {
+
+	/* #active {
 		color: red;
 		text-decoration-line: underline;
 		text-underline-offset: 10px;
 		text-decoration-thickness: 2px;
-	}
+	} */
 
 	.right-header a {
 		color: #ffffff;
 		padding-right: 5px;
 		text-decoration: none;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.top-bar {
+		display: none;
+	}
+	.hero {
+		background-size: cover;
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.content h1 {
+		margin: 10px 0px;
+		padding: 0;
+		width: auto;
+	}
+	.content h3 {
+		padding: 0px 15px;
+		width: auto;
+		height: auto;
+		margin: 20px;
+		font-size: 18px;
+	}
+
+	.contact-us, .form-content, #message, #email, .name-number {
+		margin-left: 15px;
+		margin-right: 15px;
+		width: auto;
+		text-align: center;
+	}
+	
+	br {
+		display: none;
+	}
+	.form-content {
+		padding-bottom: 10px;
+		height: auto;
+		margin-top: 10px;
+		margin-bottom: 0px;
+	}
+	#name, #number, #message, #email {
+		width: 90%;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	#name {
+		margin-right: 0;
+	}
+	.message {
+		text-align: center;
+	}
+	.subscribe {
+		text-align: center;
+	}
+	#email {
+		width: 85%;
+	}
+	
+	.container {
+		display: grid;
+		margin: 0px;
+		text-align: center;
+		justify-items: center;
+		width: auto;
+	}
+	.l-mail h3, .l-email p, .l-email h3, .l-phone p, .l-phone h3 {
+		margin-left: 0px;
+		width: auto;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: auto;
+	}
+	.l-phone {
+		margin-bottom: 20px;
 	}
 }
 
+/* Footer */
 @media only screen and (min-width: 850px) {
 	.web-footer {
 		display: block;
