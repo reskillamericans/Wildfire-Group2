@@ -124,7 +124,7 @@ body {
 
 .btn {
   width: 269px;
-  height: 70px;
+  height: 58px;
   margin-left: 232px;
   font-family: 'Rubik';
   font-style: normal;
@@ -136,6 +136,15 @@ body {
   border: none;
   border-radius: 4px;
   background-color: #ffd84d;
+  cursor: pointer;
+}
+.btn:hover {
+	/* transform: scale(0.8); */
+	background: var(--drk-ylw);
+}
+.btn:active {
+	transform: scale(0.9);
+	/* background: var(--drk-ylw); */
 }
 
 .contact-us {
@@ -279,6 +288,15 @@ body {
   border: none;
   background-color: #ffd84d;
   margin-left: 10px;
+  cursor: pointer;
+}
+.btn-contact:hover {
+	/* transform: scale(0.8); */
+	background: var(--drk-ylw);
+}
+.btn-contact:active {
+	transform: scale(0.9);
+	/* background: var(--drk-ylw); */
 }
 
 .container {
