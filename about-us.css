@@ -72,6 +72,13 @@ body {
     color: #FFD84D;
 }
 
+.top-bar a:active {
+    color: #FFD84D;
+	text-decoration-line: underline;
+	text-underline-offset: 10px;
+	text-decoration-thickness: 2px;	
+}
+
 #active2 {
     text-decoration-line: underline;
     text-underline-offset: 10px;
