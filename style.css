@@ -156,19 +156,19 @@ body{
 }
 
 #hero-section button{
-
-    background: #FFD84D;
     margin-left: 3.5vw;
     width: 100%;
     max-width: 200px;
     min-width: 150px;
- 
-    border: none;
-    border-radius: 2px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: var(--ylw);
     font-weight: bolder;
     font-size: 1rem;
     line-height: 2.75rem;
 }
+
+#hero-section button:hover{background: var(--drk-ylw);}
 
 
 
@@ -208,17 +208,23 @@ body{
 }
 
 #feature-section .text-image button {
-    background: #FFD84D;
+    background:  var(--ylw);;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     font-weight: bolder;
     font-size: 1.4em;
     line-height: 3rem;
     width: 100%;
     max-width: 200px;
     min-width: 150px;
+    height: 60px;
+
   
 }
+
+#feature-section button:hover{background: var(--drk-ylw);}
+
+
 
 #feature-section .top{
     display: flex;
@@ -388,7 +394,7 @@ footer {
 	padding: 20px 10px;
 	border-radius: 1px;
 }
-.newsletter-input-button {
+.newsletter-input {
 	height: 40px;
 	width: 100%;
 	max-width: 400px;
