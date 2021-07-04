@@ -103,6 +103,11 @@ select {
 	--footer-height: 30vh;
 }
 
+button:hover,
+button:active,
+button:focus {
+	outline: var(--ylw) solid 3px;
+}
 /* ########## NAV ########## */
 header {
 	background: var(--blk);
@@ -137,14 +142,11 @@ nav {
 	color: var(--ylw);
 	transform: scale(2);
 }
-/* .nav-ul li :hover {
-	color: var(--ylw);
-	transform: scale(2);
-	transition: all 300ms ease-in-out;
-} */
+
 #active {
 	color: var(--ylw);
 }
+
 /* ########## HERO SECTION ########## */
 .container {
 	background: url(/images/bg-bridge.png) no-repeat center/cover;
@@ -489,33 +491,6 @@ footer {
 		flex-direction: column;
 		/* border: green solid 1px; */
 	}
-
-	.top-bar {
-		display: block;
-	}
-	.top-bar ul {
-		display: flex;
-		list-style-type: none;
-		font-size: 1.6rem;
-		margin: 16px 0px 16px;
-	}
-
-	.top-bar a {
-		color: #ffffff;
-		padding-left: 75px;
-		text-decoration: none;
-	}
-
-	.top-bar a:hover {
-		color: #ffd84d;
-	}
-
-	#active2 {
-		text-decoration-line: underline;
-		text-underline-offset: 10px;
-		text-decoration-thickness: 2px;
-	}
-
 	.hero-wrapper h1 {
 		font-size: var(--h1);
 		font-weight: 700;
@@ -531,8 +506,7 @@ footer {
 	.hero-input {
 		display: flex;
 		flex-direction: row;
-		/* align-items: center; */
-		/* justify-content: center; */
+
 		width: 100%;
 		max-width: 835px;
 		/* border: black solid 1px; */
@@ -553,25 +527,50 @@ footer {
 		max-width: 193px;
 		height: 60px;
 	}
+
+	/* ########## HERO NAV ########## */
+	.top-bar {
+		display: block;
+	}
+	.top-bar ul {
+		display: flex;
+		font-size: 1.6rem;
+		max-width: 620px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	.top-bar a {
+		color: #ffffff;
+	}
+
+	.top-bar a:hover {
+		color: #ffd84d;
+	}
+
+	.top-bar a {
+		position: relative;
+		text-decoration: none;
+		padding: 6px 10px;
+	}
+	.current {
+		border-bottom: 3px var(--wht) solid;
+		padding-bottom: 25px;
+	}
+	/* ########## WEB FOOTER ########## */
 	main {
 		max-width: 1200px;
 	}
 
-	/* ########## WEB FOOTER ########## */
-
 	.mobile-footer {
 		display: none;
 	}
-	/* .box {
-		height: 110px;
-	} */
+
 	.mobile-footer-logo {
 		display: none;
 	}
-	/* .svg-web-footer {
-		display: flex;
-		align-items: flex-start;
-	} */
+
 	.web-footer {
 		height: 437px;
 		width: 100%;
