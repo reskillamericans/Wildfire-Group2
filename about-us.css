@@ -98,7 +98,7 @@ body {
 
 .left-content p {
     font-size: 21px;
-    line-height: 35px;
+    line-height: 2;
     padding-bottom: 40px;
     margin: 21px 0px;
 }
@@ -273,6 +273,7 @@ body {
     margin-right: 10px;
     padding: 0px 75px 85px 0px;
     font-size: 16px;
+	line-height: 2;
 }
 
 .proj-desc b {
@@ -799,17 +800,19 @@ footer {
 
 /* Ipad-Pro Screen Size */
 @media only screen and (max-width: 1040px) {
-    .left-content h1 {
+    .hero-container {
+		background-size: cover;
+	}
+	.left-content h1 {
         padding: 0;
     }
     .left-content p {
         font-size: 16px;
-        line-height: 20px;
         padding-bottom: 20px;
     }
 
     .people h2, .proj-desc h2 {
-        margin: 0px 0px 24.9px;
+        margin: 10px 0px 24.9px;
     }
 
     .proj-desc img {
@@ -824,7 +827,10 @@ footer {
 
 /* Tablet Screen Sizes */
 @media only screen and (max-width: 992px) {
-    .content {
+	.hero-container {
+		background-size: cover;
+	}
+	.content {
         grid-template-columns: 70% 30%;
         padding-top: 0px;
         padding-bottom: 40px;
@@ -838,12 +844,13 @@ footer {
         padding-bottom: 40px;
     }
     .phone-img {
+		padding-top: 50px;
         padding-left: 50px;
         width: 100%;
     }
 
     .middle-container {
-        padding: 0px 25px 50px;
+        padding: 15px 25px 50px;
     }
     
     .profile-pic p {
@@ -895,6 +902,7 @@ footer {
     }
     
     .content {
+		height: 592px;
         grid-template-columns: 100%;
         padding: 0;
         text-align: center;
@@ -907,7 +915,6 @@ footer {
     
     .left-content p {
         font-size: 16px;
-        line-height: 20px;
         padding: 0px 15px 30px 15px;
     }
     
@@ -915,6 +922,7 @@ footer {
         margin-left: 0;
     }
     .phone-img {
+		height: 24%;
         padding: 40px 0px 30px 0px;
     }
     
@@ -929,7 +937,6 @@ footer {
 
     .profile-pic h3, .profile-pic h5 {
         font-size: 12px;
-        overflow-y: hidden;
     }
     
     #one, #two, #three, #four {
@@ -962,4 +969,10 @@ footer {
         padding: 0px 0px 20px;
     }
     
+}
+
+@media only screen and (max-width: 300px) {
+	.content {
+		height: 675px;
+	}
 }
