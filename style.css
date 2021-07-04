@@ -162,6 +162,7 @@ body{
     min-width: 150px;
     height: 60px;
     border-radius: 5px;
+    border: none;
     background-color: var(--ylw);
     font-weight: bolder;
     font-size: 1rem;
