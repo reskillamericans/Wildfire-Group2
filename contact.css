@@ -265,6 +265,7 @@ body {
 	border: 1px solid #b8b484;
 }
 
+
 #name, #number, #message, #email {
 	border-radius: 5px;
 	margin-bottom: 15px;
@@ -375,6 +376,7 @@ body {
   margin-bottom: 50px;
   margin-left: 25px;
 }
+
 
 input, #textarea {
 	font-size: 16px;
@@ -591,6 +593,7 @@ footer {
 /* Media Queries */
 
 /* Ipad Pro Size */
+
 @media only screen and (max-width: 1150px) {
 	.top-bar ul {
 		margin: 0 0 0 16px;
@@ -802,6 +805,7 @@ footer {
 		grid-template-columns: 100%;
 		padding: 0;
 		text-align: center;
+
 	
 	}
 	.content h1 {
