@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel = 'stylesheet' href = './style.css'></link>
+    <link rel = 'stylesheet' href = "{% static './css/style.css' %}"></link>
     <title>Wildfire Landing Page</title>
 </head>
 
@@ -104,16 +105,26 @@
                     <li>Updated shelter locations</li>
                 </ul>
             </div>
-
+            {% if messages %}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endif %}
             <div class="web-footer-input">
-                <input
-                    type="text"
-                    name="web-footer-input-area"
-                    id="web-footer-input-area"
-                />
-                <button class="web-footer-button">Subscribe</button>
+               <form action="" method="POST" enctype="multipart/form-data">
+               {% for form in newsletter_form %}
+
+                    {% csrf_token %}
+                    {{form}}
+                    {{form.errors}}
+               {% endfor %}
+               <button class="web-footer-button">Subscribe</button>
+               </form>
             </div>
+
+
         </div>
+
         <div class="web-footer-container2">
             <div class="web-footer-fire">
                 <img src="./images/landing-images/navbar-logo.svg" alt="logo" />
