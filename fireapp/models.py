@@ -85,7 +85,7 @@ class HelpRequest(models.Model):
 # Frequently Asked Questions. to be extended to the frontend.Each details can be expanded to be read in full.
 class Faq(models.Model):
     title = models.CharField(max_length=150)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=300)
     message = models.TextField()
     response = models.TextField()
 

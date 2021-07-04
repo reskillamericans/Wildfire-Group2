@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import NewsletterView
+from .views import news_letter_view
 
 urlpatterns = [
-    path('newsletter/', NewsletterView.as_view(), name="news-letter"),
+    path('newsletter/', news_letter_view, name="news-letter"),
 ]
 

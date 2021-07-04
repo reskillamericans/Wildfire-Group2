@@ -45,5 +45,5 @@ class AdminNewsletter(admin.ModelAdmin):
 
 @admin.register(Faq)
 class AdminFaq(admin.ModelAdmin):
-     list_display = ("title", "message", "response")
-     prepopulated_fields = {"slug":("title",)}
+     list_display = ("title","slug","message", "response")
+     prepopulated_fields = {"slug": ("title", )}
