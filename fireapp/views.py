@@ -2,21 +2,16 @@ from django.contrib.messages.api import success
 from django.contrib.messages.constants import SUCCESS
 from django.core.checks import messages
 from django.conf import settings
-from django.shortcuts import HttpResponse, redirect, render
+from django.shortcuts import redirect, render
 from .models import Newsletter, Faq
 from .forms import NewsletterForm
-
 from django.core.mail import send_mail
 from django.contrib import messages
 
 
-# Create your views here.
-def index(request):
-    return HttpResponse("<h1>Wildfire App 2</h1>")
-
 
 # Newsletter view
-def newsletter(request):
+def index(request):
     newsletter_form = ""
     template_name = "fireapp/index.html"
     if request.method == "POST":
@@ -26,7 +21,7 @@ def newsletter(request):
             subscriber.email = newsletter_form.cleaned_data["email"]
             if Newsletter.objects.filter(email__icontains=subscriber.email).exists():
                 messages.warning(request, f" The email {subscriber.email} already exist in our list")
-                return redirect("news-letter")
+                return redirect("homepage")
             else:
                 subscriber.save()
                 send_mail(
@@ -37,10 +32,10 @@ def newsletter(request):
                 fail_silently=False
                 ),
                 messages.success(request, f"your email {subscriber.email} has been added to our newsletter successfully")
-                return redirect("news-letter")
+                return redirect("homepage")
         else:
             messages.warning(request, f"email required")
-            return redirect("news-letter")
+            return redirect("homepage")
     else:
         newsletter_form = NewsletterForm()
     context = {"newsletter_form":newsletter_form}
