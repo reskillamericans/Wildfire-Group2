@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import NewsletterView, faq
+from .views import newsletter, faq
 
 urlpatterns = [
-    path('newsletter/', NewsletterView.as_view(), name="news-letter"),
-    # path('faq/', faq, name='fireapp-faq'),
+    path('newsletter/', newsletter, name="news-letter"),
+    #path('faq/', faq, name='fireapp-faq'),
 ]
 
