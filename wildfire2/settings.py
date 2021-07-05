@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-import django_heroku
+# import django_heroku
 import environ
 from environ.environ import Env
 
@@ -137,4 +137,4 @@ EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
