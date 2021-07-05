@@ -20,18 +20,18 @@ def index(request):
             subscriber = Newsletter()
             subscriber.email = newsletter_form.cleaned_data["email"]
             if Newsletter.objects.filter(email__icontains=subscriber.email).exists():
-                messages.warning(request, f" The email {subscriber.email} already exist in our list")
+                messages.warning(request, f" The email {subscriber.email} already exist in our list.")
                 return redirect("homepage")
             else:
                 subscriber.save()
                 send_mail(
-                subject="Welcome to Reskill wildfire Subscription",
-                message="You have subscribed to Reskill Americans wildfire subscription",
+                subject="Welcome to Reskill wildfire Subscription.",
+                message="You have subscribed to Reskill Americans wildfire subscription.",
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[str(subscriber.email)],
                 fail_silently=False
                 ),
-                messages.success(request, f"your email {subscriber.email} has been added to our newsletter successfully")
+                messages.success(request, f"Your email {subscriber.email} has been added to our newsletter successfully.")
                 return redirect("homepage")
         else:
             messages.warning(request, f"email required")
