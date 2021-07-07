@@ -126,7 +126,7 @@ body{
 
 #hero-section{
     display: flex;
-    background: url("/static/images/landing-images/hero-bg.svg");
+    background: url("../images/landing-images/hero-bg.svg");
     background-repeat: no-repeat;
     background-position:start center ;
     background-size: auto 68%;

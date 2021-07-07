@@ -149,7 +149,7 @@ nav {
 
 /* ########## HERO SECTION ########## */
 .container {
-	background: url(/images/bg-bridge.png) no-repeat center/cover;
+	background: url(../images/bg-bridge.png) no-repeat center/cover;
 	width: 100%;
 
 	color: var(--wht);
