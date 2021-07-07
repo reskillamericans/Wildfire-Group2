@@ -61,3 +61,8 @@ def faq(request):
     }
 
     return render(request, 'fireapp/faq.html', context)
+
+
+def about_us(request):
+    template_name = "fireapp/about-us.html"
+    return render(request, template_name)
