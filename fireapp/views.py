@@ -37,3 +37,6 @@ def faq(request):
     }
 
     return render(request, 'fireapp/faq.html', context)
+
+def error_404(request, exception):
+    return render(request, 'fireapp/404.html')
