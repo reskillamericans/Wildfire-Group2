@@ -53,6 +53,12 @@ def index(request):
     return render(request, template_name, context)
 
 
+# About Us
+def about_us(request):
+    template_name = "fireapp/about-us.html"
+    return render(request, template_name)
+
+
 # freequently asked question(faq)
 def faq(request):
 
@@ -61,8 +67,3 @@ def faq(request):
     }
 
     return render(request, 'fireapp/faq.html', context)
-
-
-def about_us(request):
-    template_name = "fireapp/about-us.html"
-    return render(request, template_name)
