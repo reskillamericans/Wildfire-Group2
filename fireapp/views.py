@@ -1,10 +1,11 @@
 from django.contrib.messages.api import success
 from django.contrib.messages.constants import SUCCESS
 from django.core.checks import messages
-from django.http import request
-from django.shortcuts import HttpResponse, get_object_or_404, render
+from django.conf import settings
+from django.shortcuts import HttpResponse, redirect, render
 from .models import Newsletter, Faq
-from django.views.generic import CreateView
+from .forms import NewsletterForm
+
 from django.core.mail import send_mail
 from django.contrib import messages
 
@@ -14,22 +15,39 @@ def index(request):
     return HttpResponse("<h1>Wildfire App 2</h1>")
 
 
-class NewsletterView(CreateView):
-    template_name = 'newsletter/newsletter.html'
-    model = Newsletter
-    fields = ['email',]
+# Newsletter view
+def newsletter(request):
+    newsletter_form = ""
+    template_name = "fireapp/index.html"
+    if request.method == "POST":
+        newsletter_form = NewsletterForm(request.POST)
+        if newsletter_form.is_valid():
+            subscriber = Newsletter()
+            subscriber.email = newsletter_form.cleaned_data["email"]
+            if Newsletter.objects.filter(email__icontains=subscriber.email).exists():
+                messages.warning(request, f" The email {subscriber.email} already exist in our list")
+                return redirect("news-letter")
+            else:
+                subscriber.save()
+                send_mail(
+                subject="Welcome to Reskill wildfire Subscription",
+                message="You have subscribed to Reskill Americans wildfire subscription",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[str(subscriber.email)],
+                fail_silently=False
+                ),
+                messages.success(request, f"your email {subscriber.email} has been added to our newsletter successfully")
+                return redirect("news-letter")
+        else:
+            messages.warning(request, f"email required")
+            return redirect("news-letter")
+    else:
+        newsletter_form = NewsletterForm()
+    context = {"newsletter_form":newsletter_form}
+    return render(request, template_name, context)
 
-    def form_valid(self, form):
-        send_mail(
-            subject="Welcome to Reskill wildfire Subscription",
-            message="You have subscribed to Reskill Americans wildfire subscription",
-            from_email="liomes8016@gmail.com",
-            recipient_list=[str(form.instance.email)],
-            fail_silently=False
-        )
-        messages.success(self.request, f"your email {form.instance.email} has been added to our newsletter successfully")
-        return super().form_valid(form)
 
+# freequently asked question(faq)
 def faq(request):
 
     context = {
