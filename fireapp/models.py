@@ -3,6 +3,7 @@ from django.db.models import fields
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 
 
@@ -15,7 +16,7 @@ class Newsletter(models.Model):
         return f"{self.email}"
 
     def get_absolute_url(request):
-        return reverse('news-letter')
+        return reverse('homepage')
 
 
 # both registered and guest users can add contents or updates with this form.
@@ -90,3 +91,20 @@ class Faq(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+class Contact(models.Model):
+    full_name = models.CharField(max_length=150)
+    # error message when a wrong format entered
+    phone_message = 'Phone number must be entered in the format: 9999999999' 
+    # your desired format 
+    phone_regex = RegexValidator(
+        regex=r'^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$',
+        message=phone_message
+    )
+    phone_no = models.CharField(validators=[phone_regex], max_length=60, null=True, blank=True)
+    message = models.CharField(max_length=200)
+    email = models.EmailField(max_length=150)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.full_name}"

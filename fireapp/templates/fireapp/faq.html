@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frequently Asked Questions</title>
+		<link rel="stylesheet" href="{% static './fireapp/css/faq.css' %}"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com"/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/a8d251cb18.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">
+					<svg
+						width="70"
+						height="70"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						class="logo-img"
+					>
+						<circle cx="12" cy="14" r="6" fill="#F82508" />
+						<circle cx="12" cy="11" r="4" fill="#FF974D" />
+						<circle cx="11" cy="9" r="2" fill="#FFD84D" />
+						<circle cx="12" cy="5" r="1" fill="#8B8899" />
+					</svg>
+				</div>
+
+				<ul class="nav-ul">
+					<li><a href="{% url 'homepage' %}">Home</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="{% url 'fireapp-faq' %}">FAQ</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="container">
+			<div class="hero-wrapper">
+				<h1>Frequently Asked Questions</h1>
+				<h2>
+					Please first review the previously asked most popular questions before
+					submitting a new question
+				</h2>
+				<div class="hero-input">
+					<input type="text" name="hero-input-area" id="hero-input-area" />
+					<button class="hero-input-button">Submit</button>
+				</div>
+			</div>
+		</section>
+		<main>
+			<div class="accordian">
+				{% for question in questions %}
+					<div class="accordian-item" id="{{ question.id }}">
+						<a class="accordian-link" href="#{{ question.id }}">
+							{{ question.title }}
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="plus-sign"
+							>
+								<path
+									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M12 8V16"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M8 12H16"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								class="minus-sign"
+							>
+								<path
+									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M8 12H16"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</a>
+						<div class="answer">
+							<p>
+								{{ question.response }}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</main>
+		<footer class="mobile-footer">
+			<div class="mobile-footer-container">
+				<div class="mobile-footer-wrapper">
+					<svg
+						width="90"
+						height="90"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						class="mobile-footer-logo"
+					>
+						<circle cx="12" cy="14" r="6" fill="#F82508" />
+						<circle cx="12" cy="11" r="4" fill="#FF974D" />
+						<circle cx="11" cy="9" r="2" fill="#FFD84D" />
+						<circle cx="12" cy="5" r="1" fill="#8B8899" />
+					</svg>
+					<div class="information-meta">
+						<h3 class="fire-h3">Fire Alert</h3>
+						<p>&copy; 2010 - 2020</p>
+						<p>Privacy - Terms</p>
+					</div>
+
+					<ul class="resources-list">
+						<li><a href="#">Resources</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					<div class="partners">
+						<h2>Partners</h2>
+						<img 
+							src="{% static './images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
+							alt="Reskill Americans Logo"
+						/>
+					</div>
+				</div>
+
+				<div class="newsletter-follow-wrapper">
+					<div class="newsletter-input">
+						<h2 class="newsletter-h2">
+							Subscribe to stay up to date on all the newest fires in your area.
+						</h2>
+						<input
+							type="email"
+							name="newsletter-input-area"
+							id="newsletter-input-area"
+						/>
+						<button class="newsletter-input-button">Subscribe</button>
+					</div>
+
+					<div class="follow-us">
+						<h2>Follow Us</h2>
+						<div class="sm-icons">
+							<i class="fab fa-facebook"></i>
+							<i class="fab fa-instagram-square"></i>
+							<i class="fab fa-twitter"></i>
+							<i class="fab fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<footer class="web-footer">
+			<div class="web-footer-container">
+				<div class="web-footer-headline">
+					<h2>
+						Subscribe to stay up to date on all the newest fires in your area.
+					</h2>
+					<ul>
+						<li>We will never send you spam</li>
+						<li>All the latest news and statistics</li>
+						<li>Updated shelter locations</li>
+					</ul>
+				</div>
+
+				<div class="web-footer-input">
+					<input
+						type="text"
+						name="web-footer-input-area"
+						id="web-footer-input-area"
+					/>
+					<button class="web-footer-button">Subscribe</button>
+				</div>
+			</div>
+			<div class="web-footer-container2">
+				<div class="web-footer-fire">
+					<img src="{% static './fireapp/images/group 2 logo.svg' %}" alt="logo" />
+
+					<div class="fire-alert box">
+						<h3 class="fire-h3">Fire Alert</h3>
+						<p>&copy; 2010 - 2020</p>
+						<p>Privacy - Terms</p>
+					</div>
+				</div>
+				<div class="web-footer-items">
+					<div class="side-border"></div>
+					<ul class="resources box">
+						<li><a href="#">Resources</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					<div class="side-border"></div>
+					<div class="partners box">
+						<h2>Partners</h2>
+						<img
+							src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
+							alt="Reskill Americans Logo"
+						/>
+					</div>
+					<div class="side-border"></div>
+					<div class="follow box">
+						<h2>Follow Us</h2>
+						<div class="sm-icons">
+							<i class="fab fa-facebook"></i>
+							<i class="fab fa-instagram-square"></i>
+							<i class="fab fa-twitter"></i>
+							<i class="fab fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
