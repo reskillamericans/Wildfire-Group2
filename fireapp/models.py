@@ -15,7 +15,7 @@ class Newsletter(models.Model):
         return f"{self.email}"
 
     def get_absolute_url(request):
-        return reverse('news-letter')
+        return reverse('homepage')
 
 
 # both registered and guest users can add contents or updates with this form.
