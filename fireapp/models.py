@@ -93,7 +93,7 @@ class Faq(models.Model):
         return f"{self.title}"
 
 class Contact(models.Model):
-    full_name = models.CharField(max_length=150)
+    full_name = models.CharField(max_length=150, verbose_name="")
     # error message when a wrong format entered
     phone_message = 'Phone number must be entered in the format: 9999999999' 
     # your desired format 
@@ -101,9 +101,9 @@ class Contact(models.Model):
         regex=r'^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$',
         message=phone_message
     )
-    phone_no = models.CharField(validators=[phone_regex], max_length=60, null=True, blank=True)
-    message = models.CharField(max_length=200)
-    email = models.EmailField(max_length=150)
+    phone_no = models.CharField(validators=[phone_regex], max_length=60, null=True, blank=True, verbose_name="")
+    message = models.CharField(max_length=200, verbose_name="")
+    email = models.EmailField(max_length=150, verbose_name="")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
