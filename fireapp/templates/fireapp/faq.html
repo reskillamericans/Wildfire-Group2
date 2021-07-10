@@ -52,6 +52,14 @@
 			</nav>
 		</header>
 		<section class="container">
+			<div class="top-bar">
+				<ul>
+					<li><a href="{% url 'homepage' %}">Home</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'contact' %}">Contact Us</a></li>
+					<li><a href="{% url 'faq' %}">FAQ</a></li>
+				</ul>
+			</div>
 			<div class="hero-wrapper">
 				<h1>Frequently Asked Questions</h1>
 				<h2>
@@ -255,5 +263,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="{% static './fireapp/js/app.js' %}"></script>
 	</body>
 </html>
