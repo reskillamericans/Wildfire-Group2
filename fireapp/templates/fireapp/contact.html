@@ -26,10 +26,10 @@ crossorigin="anonymous"
     </div>
       <div class="right-header">
         <ul>
-          <li><a href="index.html" class="home">Home</a></li>
-          <li><a href="about-us.html" class="about">About Us</a></li>
-          <li><a href="contact.html" class="contact" id="active">Contact Us</a></li>
-          <li><a href="faq.html" class="faq">FAQ</a></li>
+          <li><a href="{% url 'homepage' %}" class="home">Home</a></li>
+          <li><a href="{% url 'about_us' %}" class="about">About Us</a></li>
+          <li><a href="{% url 'contact' %}" class="contact" id="active">Contact Us</a></li>
+          <li><a href="{% url 'fireapp-faq' %}" class="faq">FAQ</a></li>
         </ul>
       </div>
   </header>
