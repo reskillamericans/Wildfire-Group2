@@ -7,6 +7,7 @@ from .models import (
     HelpRequest,
     Newsletter,
     Faq,
+     Contact,
 )
 
 
@@ -47,3 +48,8 @@ class AdminNewsletter(admin.ModelAdmin):
 class AdminFaq(admin.ModelAdmin):
      list_display = ("title", "response")
      #prepopulated_fields = {"slug":("title",)}
+     
+@admin.register(Contact)
+class AdminContact(admin.ModelAdmin):
+     list_display = ("full_name", "phone_no", "message", "email", "created_at")
+     

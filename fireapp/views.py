@@ -5,7 +5,7 @@ from django.conf import settings
 from django.shortcuts import redirect, render
 from .models import Newsletter, Faq
 from django.contrib.auth.models import User
-from .forms import NewsletterForm
+from .forms import NewsletterForm, SubmitQuestion
 from django.core.mail import send_mail
 from django.contrib import messages
 
@@ -67,3 +67,26 @@ def faq(request):
     }
 
     return render(request, 'fireapp/faq.html', context)
+def contact(request):
+    if request.method =='POST':
+        form = SubmitQuestion(request.POST)
+        if form.is_valid():
+
+            receivers = []
+            for user in User.objects.filter(is_superuser=True):
+                receivers.append(user.email)
+
+            send_mail(
+                subject='New Inquiry Received',
+                message='A new inquiry has been submitted. Please respond as soon as possible.',
+                from_email=None,
+                recipient_list=receivers,
+                fail_silently=False
+            )
+            form.save()
+            messages.success(request, f'Your inquiry has been subimtted!')
+            return redirect('contact')
+    else:
+        form = SubmitQuestion()
+
+    return render(request, 'fireapp/contact.html', {'form':form})
