@@ -23,4 +23,3 @@ class SubmitQuestion(forms.ModelForm):
             'message': forms.Textarea(attrs={"placeholder":"Contact us for anything related to the website or app.", "id":"message"}),
             'email': forms.EmailInput(attrs={"placeholder":"Email@outlook.com", "id":"email", "class":"subscribe"}),
         }
-
