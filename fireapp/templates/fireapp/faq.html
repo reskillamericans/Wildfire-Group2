@@ -18,6 +18,13 @@
 		></script>
 	</head>
 	<body>
+
+		{% for message in messages %}
+       	<div class="alert alert-{{message.tags}}">
+        	<h1>{{message}}</h1>
+       	</div>
+    	{% endfor %}
+
 		<header>
 			<nav>
 				<div class="logo">
@@ -39,8 +46,8 @@
 				<ul class="nav-ul">
 					<li><a href="{% url 'homepage' %}">Home</a></li>
 					<li><a href="{% url 'about_us' %}">About Us</a></li>
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="{% url 'fireapp-faq' %}">FAQ</a></li>
+					<li><a href="{% url 'contact' %}"></a>Contact Us</a></li>
+					<li><a href="{% url 'faq' %}">FAQ</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -201,14 +208,14 @@
 					</ul>
 				</div>
 
-				<div class="web-footer-input">
-					<input
-						type="text"
-						name="web-footer-input-area"
-						id="web-footer-input-area"
-					/>
+				<form class="web-footer-input" method="POST">
+					{% for form in newsletter_form %}
+						{% csrf_token %}
+						{{ form }}
+						{{ form.errors }}
+					{% endfor %}
 					<button class="web-footer-button">Subscribe</button>
-				</div>
+				</form>
 			</div>
 			<div class="web-footer-container2">
 				<div class="web-footer-fire">

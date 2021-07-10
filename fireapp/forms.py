@@ -10,5 +10,3 @@ class NewsletterForm(forms.Form):
     class Meta:
         model: Newsletter
         fields = ["email"]
-
-    
