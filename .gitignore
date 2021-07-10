@@ -1,1 +1,4 @@
 Pipfile
+requirements.txt
+.env
+.venv
