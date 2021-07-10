@@ -3,7 +3,7 @@ from django.contrib.messages.constants import SUCCESS
 from django.core.checks import messages
 from django.conf import settings
 from django.shortcuts import redirect, render
-from .models import Newsletter, Faq
+from .models import Faq
 from django.contrib.auth.models import User
 from .forms import NewsletterForm, SubmitQuestion
 from django.core.mail import send_mail
@@ -45,26 +45,35 @@ def faq(request):
         'newsletter_form': NewsletterForm()
     }
     return render(request, 'fireapp/faq.html', context)
+
+# Contact Us
 def contact(request):
-    if request.method =='POST':
-        form = SubmitQuestion(request.POST)
-        if form.is_valid():
+    if request.method == 'POST':
+        if request.POST.__contains__('full_name'):
+            contact_form = SubmitQuestion(request.POST)
+            if contact_form.is_valid():
 
-            receivers = []
-            for user in User.objects.filter(is_superuser=True):
-                receivers.append(user.email)
+                receivers = []
+                for user in User.objects.filter(is_superuser=True):
+                    receivers.append(user.email)
 
-            send_mail(
-                subject='New Inquiry Received',
-                message='A new inquiry has been submitted. Please respond as soon as possible.',
-                from_email=None,
-                recipient_list=receivers,
-                fail_silently=False
-            )
-            form.save()
-            messages.success(request, f'Your inquiry has been subimtted!')
-            return redirect('contact')
-    else:
-        form = SubmitQuestion()
+                send_mail(
+                    subject='New Inquiry Received',
+                    message='A new inquiry has been submitted. Please respond as soon as possible.',
+                    from_email=None,
+                    recipient_list=receivers,
+                    fail_silently=False
+                )
+                contact_form.save()
+                messages.success(request, f'Your inquiry has been subimtted!')
+                return redirect('contact')
+        else:
+            if newsletter(request):
+                return redirect("homepage")
 
-    return render(request, 'fireapp/contact.html', {'form':form})
+    context = {
+        'contact_form': SubmitQuestion(),
+        'newsletter_form': NewsletterForm()
+        }    
+
+    return render(request, 'fireapp/contact.html', context)
