@@ -74,6 +74,9 @@ def contact(request):
     context = {
         'contact_form': SubmitQuestion(),
         'newsletter_form': NewsletterForm()
-        }    
-
+        }
     return render(request, 'fireapp/contact.html', context)
+
+
+def error_404(request, exception):
+    return render(request, 'fireapp/404.html')
