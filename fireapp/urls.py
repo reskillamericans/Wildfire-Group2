@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import newsletter, faq
+from .views import index, faq, about_us, contact
 
 urlpatterns = [
-    path('newsletter/', newsletter, name="news-letter"),
-    #path('faq/', faq, name='fireapp-faq'),
+    path('', index, name="homepage"),
+    path('faq/', faq, name='faq'),
+    path('about-us/', about_us, name="about_us"),
+    path('contact/', contact, name="contact"),
 ]
-
