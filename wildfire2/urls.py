@@ -11,3 +11,6 @@ urlpatterns = [
     path('', fireapp_views.index, name="homepage"),
     path('', include('fireapp.urls')),
 ]
+
+handler404 = 'fireapp.views.error_404'
+
