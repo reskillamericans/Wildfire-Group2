@@ -18,6 +18,13 @@
 		></script>
 	</head>
 	<body>
+
+		{% for message in messages %}
+       	<div class="alert alert-{{message.tags}}">
+        	<h1>{{message}}</h1>
+       	</div>
+    	{% endfor %}
+
 		<header>
 			<nav>
 				<div class="logo">
@@ -40,21 +47,29 @@
 					<li><a href="{% url 'homepage' %}" class="home">Home</a></li>
           			<li><a href="{% url 'about_us' %}" class="about">About Us</a></li>
          			<li><a href="{% url 'contact' %}" class="contact">Contact Us</a></li>
-         			<li><a href="{% url 'fireapp-faq' %}" class="faq" id="active">FAQ</a></li>
+         			<li><a href="{% url 'faq' %}" class="faq" id="active">FAQ</a></li>
 				</ul>
 			</nav>
 		</header>
 		<section class="container">
+			<div class="top-bar">
+				<ul>
+					<li><a href="{% url 'homepage' %}">Home</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'contact' %}">Contact Us</a></li>
+					<li><a href="{% url 'faq' %}">FAQ</a></li>
+				</ul>
+			</div>
 			<div class="hero-wrapper">
 				<h1>Frequently Asked Questions</h1>
 				<h2>
 					Please first review the previously asked most popular questions before
 					submitting a new question
 				</h2>
-				<div class="hero-input">
+				<!-- <div class="hero-input">
 					<input type="text" name="hero-input-area" id="hero-input-area" />
 					<button class="hero-input-button">Submit</button>
-				</div>
+				</div> -->
 			</div>
 		</section>
 		<main>
@@ -201,14 +216,14 @@
 					</ul>
 				</div>
 
-				<div class="web-footer-input">
-					<input
-						type="text"
-						name="web-footer-input-area"
-						id="web-footer-input-area"
-					/>
+				<form class="web-footer-input" method="POST">
+					{% for form in newsletter_form %}
+						{% csrf_token %}
+						{{ newsletter_form }}
+						{{ form.errors }}
+					{% endfor %}
 					<button class="web-footer-button">Subscribe</button>
-				</div>
+				</form>
 			</div>
 			<div class="web-footer-container2">
 				<div class="web-footer-fire">
@@ -248,5 +263,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="{% static './fireapp/js/app.js' %}"></script>
 	</body>
 </html>

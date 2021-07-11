@@ -20,6 +20,13 @@ crossorigin="anonymous"
 </head>
 
 <body>
+
+  {% for message in messages %}
+       <div class="alert alert-{{message.tags}}">
+            <h1>{{message}}</h1>
+       </div>
+    {% endfor %}
+
   <header class="nav-bar">
     <div class="left-header">
       <img src="{% static 'fireapp/images/contact-images/group 2 logo.svg' %}" alt="logo" /> 
@@ -29,7 +36,7 @@ crossorigin="anonymous"
           <li><a href="{% url 'homepage' %}" class="home">Home</a></li>
           <li><a href="{% url 'about_us' %}" class="about">About Us</a></li>
           <li><a href="{% url 'contact' %}" class="contact" id="active">Contact Us</a></li>
-          <li><a href="{% url 'fireapp-faq' %}" class="faq">FAQ</a></li>
+          <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
         </ul>
       </div>
   </header>
@@ -37,10 +44,10 @@ crossorigin="anonymous"
   <section class="hero">
     <div class="top-bar">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="contact.html" id="active2">Contact Us</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="{% url 'homepage' %}">Home</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'contact' %}" id="active2">Contact Us</a></li>
+        <li><a href="{% url 'faq' %}">FAQ</a></li>
       </ul>
     </div>
       
@@ -53,13 +60,12 @@ crossorigin="anonymous"
   </section>
 
   <section>
-    <p class="message text-center">{% if messages %} {% for message in messages %} {{ message }} {% endfor %} {% endif %}</p>
     <form method= "post">
       <h3 class="contact-us">Contact Us</h3>
       <p class="form-content">We ask that you please check the FAQ page to see if your question has already been <br> asked. Response times will vary depending on the questions but we will try to reply within <br> 24 to 48 hours.</p>
       
       {% csrf_token %}
-      {{ form }}
+      {{ contact_form }}
        
       <button type="Submit" class="btn-contact subscribe">Submit</button> 
     </form>
@@ -155,14 +161,14 @@ crossorigin="anonymous"
             </ul>
         </div>
 
-        <div class="web-footer-input">
-            <input
-                type="text"
-                name="web-footer-input-area"
-                id="web-footer-input-area"
-            />
-            <button class="web-footer-button">Subscribe</button>
-        </div>
+        <form class="web-footer-input" method="POST">
+					{% for form in newsletter_form %}
+						{% csrf_token %}
+						{{ newsletter_form }}
+						{{ form.errors }}
+					{% endfor %}
+					<button class="web-footer-button">Subscribe</button>
+				</form>
     </div>
     <div class="web-footer-container2">
         <div class="web-footer-fire">
@@ -202,6 +208,7 @@ crossorigin="anonymous"
         </div>
     </div>
 </footer>
+<script src="{% static './fireapp/js/app.js' %}"></script>
 
 </body>
 </html>
