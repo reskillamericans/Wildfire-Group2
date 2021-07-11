@@ -10,7 +10,7 @@ from django.core.validators import RegexValidator
 
 #users who wish to get regular update mails can supply their emails for news letters.
 class Newsletter(models.Model):
-    email = models.EmailField(max_length=150, unique=True)
+    email = models.EmailField(max_length=150, unique=True, verbose_name="")
     
     def __str__(self):
         return f"{self.email}"

@@ -30,14 +30,14 @@
     <!-- HEADER COMPONENT -->
     <header class="nav-bar">
         <div class="left-header">
-            <a href="index.html"><img src="{% static './fireapp/images/contact-images/group 2 logo.svg' %}" alt="logo" /></a>
+          <a href="{% url 'homepage' %}"><img src="{% static './fireapp/images/contact-images/group 2 logo.svg' %}" alt="logo" /></a> 
         </div>
         <div class="right-header">
              <ul>
               <li><a href="{% url 'homepage' %}" class="home" id="active">Home</a></li>
               <li><a href="{% url 'about_us' %}" class="about">About Us</a></li>
               <li><a href="{% url 'contact' %}" class="contact" >Contact Us</a></li>
-              <li><a href="{% url 'fireapp-faq' %}" class="faq">FAQ</a></li>
+              <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
             </ul>
         </div>
     </header>
@@ -124,17 +124,13 @@
                         Subscribe to stay up to date on all the newest fires in your area.
                     </h2>
 
-                    <form action="" method="POST">
-
-                        <div style="float:left">
-                            {% for form in newsletter_form %} {% csrf_token %}
-                            <p>{{ form }}</p>
-                            {{ form.errors }} {% endfor %}
-                        </div>
-
-                        <div style="float:right">
-                            <button class="web-footer-button">Subscribe</button>
-                        </div>
+                    <form class="web-footer-input" method="POST">
+                        {% for form in newsletter_form %}
+                            {% csrf_token %}
+                            {{ form }}
+                            {{ form.errors }}
+                        {% endfor %}
+                        <button class="web-footer-button">Subscribe</button>
                     </form>
 
                 </div>
@@ -164,20 +160,14 @@
                 </ul>
             </div>
 
-            <div class="web-footer-input">
-                <form action="" method="POST">
-                    <div style="float:left">
-                        {% for form in newsletter_form %} {% csrf_token %}
-                        <p>{{ form }}</p>
-                        {{ form.errors }} {% endfor %}
-                    </div>
-
-                    <div style="float:right">
-                        <button class="web-footer-button">Subscribe</button>
-                    </div>
-
-                </form>
-            </div>
+            <form class="web-footer-input" method="POST">
+                {% for form in newsletter_form %}
+                    {% csrf_token %}
+                    {{ newsletter_form }}
+                    {{ form.errors }}
+                {% endfor %}
+                <button class="web-footer-button">Subscribe</button>
+            </form>
 
         </div>
         <div class="web-footer-container2">
@@ -215,6 +205,7 @@
             </div>
         </div>
     </footer>
+    <script src="{% static './fireapp/js/app.js' %}"></script>
 </body>
 
 </html>
