@@ -1,4 +1,4 @@
 Pipfile
 requirements.txt
-.env
+wildfire2/.env
 .venv
