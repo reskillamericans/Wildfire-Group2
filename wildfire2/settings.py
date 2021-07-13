@@ -70,12 +70,12 @@ WSGI_APPLICATION = 'wildfire2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wildfire-backend-python2',
-        'USER': 'pythontest',
-        'PASSWORD': 'pdai2@2o21SA',
-        'HOST': '68.183.121.201',
-        'PORT': 3306,
+        'ENGINE': env("DATABASE_ENGINE"),
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
     }
 }
 
