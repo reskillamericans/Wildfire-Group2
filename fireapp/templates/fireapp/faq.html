@@ -66,80 +66,32 @@
 					Please first review the previously asked most popular questions before
 					submitting a new question
 				</h2>
-				<!-- <div class="hero-input">
-					<input type="text" name="hero-input-area" id="hero-input-area" />
-					<button class="hero-input-button">Submit</button>
-				</div> -->
+				<form class="hero-input" method="get">
+					<input type="text" id="hero-input-area" name="q" placeholder="Search" value="{{query}}"/>
+					<button class="hero-input-button" type="submit">Submit</button>
+				</form>
 			</div>
 		</section>
 		<main>
 			<div class="accordian">
-				{% for question in questions %}
-					<div class="accordian-item" id="{{ question.id }}">
-						<a class="accordian-link" href="#{{ question.id }}">
-							{{ question.title }}
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-								class="plus-sign"
-							>
-								<path
-									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M12 8V16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8 12H16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
+				{% if results is None %}	
+						{% for question in questions %}
+							
+							{% include './snippets/faq_question_snippet.html' %}
 
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-								class="minus-sign"
-							>
-								<path
-									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8 12H16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</a>
-						<div class="answer">
-							<p>
-								{{ question.response }}
-							</p>
-						</div>
+						{% endfor %}
+				{% elif results|length == 0 %}
+					<div class="accordian-item">
+						<h2>No results</h2>
+						<p>There were no results matching: {{query}}.</p>
 					</div>
-				{% endfor %}
+				{% else %}
+					{% for question in results %}
+							
+						{% include './snippets/faq_question_snippet.html' %}
+
+					{% endfor %}
+				{% endif %}
 			</div>
 		</main>
 		<footer class="mobile-footer">

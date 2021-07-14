@@ -9,7 +9,7 @@ from .forms import NewsletterForm, SubmitQuestion
 from django.core.mail import send_mail
 from django.contrib import messages
 from .helper import newsletter
-
+from django.db.models import Q
 
 
 # Newsletter view
@@ -37,14 +37,39 @@ def about_us(request):
 
 # Frequently Asked Questions
 def faq(request):
-    if newsletter(request):
-        return redirect("homepage")
 
     context = {
         'questions' : Faq.objects.all(),
-        'newsletter_form': NewsletterForm()
+        'newsletter_form': NewsletterForm(),
     }
+
+    if request.GET:
+
+        if request.GET['q']:
+            query = request.GET['q']
+            context['query'] = str(query)
+
+            context['results'] = get_faq_queryset(query)
+
+    if newsletter(request):
+        return redirect("homepage")
+
     return render(request, 'fireapp/faq.html', context)
+
+def get_faq_queryset(query=None):
+    queryset = []
+    if query is None:
+        return None    
+    queries = query.split(" ") # What to do = [What, to, do]
+    for q in queries:
+        questions = Faq.objects.filter(
+            Q(title__icontains=q)    
+        )
+        queryset.extend(questions)
+        
+    return list(set(queryset))
+
+    
 
 # Contact Us
 def contact(request):
