@@ -757,7 +757,6 @@ footer {
 }
 
 
-
 @media only screen and (max-width:600px) {
   .btn {
 	width: auto;
@@ -775,7 +774,9 @@ footer {
   .left-header {
 	justify-self: center;
   }
-
+  .right-header ul {
+	  justify-content: space-around;
+  }
 
 	/* #active {
 		color: red;

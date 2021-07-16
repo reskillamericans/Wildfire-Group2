@@ -584,7 +584,9 @@ footer {
         padding-left: 0px;
         width: 100%;
     }
-
+	.right-header ul {
+		justify-content: space-around;
+	}
     .right-header{
         margin-top: 2vh;
 		padding-bottom: 10px;

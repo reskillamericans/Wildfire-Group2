@@ -920,12 +920,19 @@ footer {
 /* Mobile Screen Sizes */
 @media only screen and (max-width: 600px) {
   /* Header */
-
+  .nav-bar {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 100%;
+	}
   .left-header,
   .right-header ul {
     padding-left: 0px;
     padding-bottom: 10px;
 	width: 100%;
+  }
+  .right-header ul {
+    justify-content: space-around;
   }
 
   .right-header a {
