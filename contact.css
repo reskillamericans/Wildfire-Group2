@@ -23,8 +23,6 @@ body {
 }
 
 .left-header {
-  width: 70px;
-  height: 70px;
   padding-left: 75px;
 }
 
@@ -40,10 +38,12 @@ body {
   color: #ffffff;
   padding-right: 75px;
   text-decoration: none;
+  transition: all 300ms ease-in-out;
 }
 
 .right-header a:hover {
   color: #ffd84d;
+  transform: scale(2);
 }
 
 #active {
@@ -58,53 +58,45 @@ body {
   padding-top: 20px;
 }
 
+.top-bar {
+	display: block;
+}
 .top-bar ul {
-  display: flex;
-  list-style-type: none;
-  margin: 16px 0px 16px;
-  font-family: 'Rubik';
-  font-style: normal;
-  line-height: 19px;
-  font-size: 16px;
+	display: flex;
+	font-size: 1.6rem;
+	max-width: 620px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
-
+  
 .top-bar a {
-  color: #ffffff;
-  padding-left: 70px;
-  text-decoration: none;
+	color: #ffffff;
 }
-
+  
 .top-bar a:hover {
-  color: #ffd84d;
+	color: #ffd84d;
 }
-
-.top-bar a:active {
-	color: #FFD84D;
-	text-decoration-line: underline;
-	text-underline-offset: 10px;
-	text-decoration-thickness: 2px;
+  
+.top-bar a {
+	position: relative;
+	text-decoration: none;
+	padding: 6px 10px;
 }
-
-#active2 {
-  text-decoration-line: underline;
-  text-underline-offset: 10px;
-  text-decoration-thickness: 2px;
-}
-
-.hero-contact a {
-  text-decoration: underline;
-  color: #ffffff;
+.current {
+	border-bottom: 3px var(--wht) solid;
+	padding-bottom: 25px;
 }
 
 .hero h1 {
   width: 627px;
   height: 67px;
-  margin-left: 232px;
-  padding-top: 120px;
+  margin-left: 100px;
+  padding-top: 130px;
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 37px;
+  font-size: 3.2em;
   line-height: 44px;
   color: #ffffff;
 }
@@ -112,12 +104,12 @@ body {
 .hero h3 {
   width: 574px;
   height: 68px;
-  margin-left: 232px;
+  margin-left: 100px;
   margin-top: 60px;
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 27px;
+  font-size: 25px;
   line-height: 34px;
   color: #ffffff;
 }
@@ -125,7 +117,7 @@ body {
 .btn {
   width: 269px;
   height: 58px;
-  margin-left: 232px;
+  margin-left: 100px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
@@ -151,7 +143,7 @@ body {
   width: 156px;
   height: 33px;
   padding-top: 25px;
-  margin-left: 467px;
+  margin-left: 350px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
@@ -165,7 +157,7 @@ body {
   width: 666px;
   height: 57px;
   padding-top: 23px;
-  margin-left: 467px;
+  margin-left: 350px;
   margin-bottom: 50px;
   font-family: 'Rubik';
   font-weight: normal;
@@ -177,7 +169,7 @@ body {
 }
 
 .name-number {
-  margin-left: 467px;
+  margin-left: 350px;
   margin-bottom: 10px;
 }
 
@@ -185,6 +177,7 @@ body {
   width: 330px;
   height: 30px;
 	border: 1px solid #b8b484;
+	
 }
 
 #name::placeholder {
@@ -244,7 +237,7 @@ body {
 }
 
 #number {
-  width: 320px;
+  width: 330px;
   height: 30px;
 	border: 1px solid #b8b484;
 	margin-left: 10px;
@@ -253,31 +246,34 @@ body {
 #message {
   width: 665px;
   height: 146px;
-  margin-left: 467px;
+  margin-left: 350px;
   border: 1px solid #b8b484;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 0.5em;
+  font-size: 16px;
 }
 
 #email {
   width: 435px;
   height: 30px;
-  margin-left: 467px;
+  margin-left: 350px;
   margin-bottom: 50px;
 	border: 1px solid #b8b484;
 }
 
 
-#name, #number, #message, #email {
+#name, #number, #email {
 	border-radius: 5px;
 	margin-bottom: 15px;
-	padding: 1.3em;
+	padding: 1.3em 0.5em;
 	font-size: 16px;
 }
 
 .btn-contact {
-  height: 40px;
+  height: 43px;
   width: 72%;
-  max-width: 200px;
-  min-width: 150px;
+  width: 218px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
@@ -285,7 +281,7 @@ body {
   line-height: 19px;
   color: #000000;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 5px;
   border: none;
   background-color: #ffd84d;
   margin-left: 10px;
@@ -303,7 +299,7 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  margin-left: 467px;
+  margin-left: 350px;
 }
 
 .l-mail h3 {
@@ -366,7 +362,6 @@ body {
 
 .l-phone p {
   color: #000000;
-  width: 203px;
   height: 57px;
   font-family: 'Rubik';
   font-style: normal;
@@ -612,7 +607,7 @@ footer {
 		margin: 10px 0 0 0;
 		padding: 20px 0 0 0;
 		width: auto;
-		font-size: 40px;
+		font-size: 32px;
 	}
 	.content h3 {
 		padding: 0px 15px;
@@ -648,7 +643,7 @@ footer {
 		margin-right: 10px;
 	}
 	#message {
-		width: 65%;
+		width: 685px;
 		margin-bottom: 10px;
 		text-align: left;
 	}
@@ -659,16 +654,13 @@ footer {
 		text-align: center;
 	}
 	#email {
-		width: 25%;
+		width: 435px;
 		text-align: left;
-		margin-left: -65px;
-	}
-	.btn-contact {
-		max-width: 175px;
+		margin-left: -5px;
 	}
 	.container {
 		justify-content: center;
-		margin-left: 60px;
+		margin-left: -50px;
 	}
 	.l-mail h3, .l-email h3, .l-phone h3 {
 		margin-bottom: 10px;
@@ -678,14 +670,22 @@ footer {
 
 /* Tablet Sizes */
 @media only screen and (max-width: 992px) {
-	.top-bar ul {
-		margin: 0 0 0 16px;
+	.top-bar {
+		display:none;
 	}
-
+	.nav-bar {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 100%;
+	}
 	.hero {
 		height: auto;
 	}
-
+	.right-header ul {
+		justify-content: center;
+		padding-left: 75px;
+		padding-bottom: 10px;
+	}
 	.content {
 		display: grid;
 		grid-template-columns: 100%;
@@ -716,6 +716,7 @@ footer {
 		text-align: center;
 	}
 	
+	
 	br {
 		display: none;
 	}
@@ -727,11 +728,10 @@ footer {
 		font-size: 16px;
 	}
 	#name, #number {
-		width: 43%;
+		width: 258px;
 	}
 	#message {
-		width: 85%;
-		max-width: 85%;
+		width: 540px;
 		margin-bottom: 10px;
 		text-align: left;	
 	}
@@ -741,23 +741,20 @@ footer {
 	.subscribe {
 		text-align: center;
 	}
-	.btn-contact {
-		max-width: 300px;
-	}
+	
 	#email {
-		width: 40%;
+		width: 295px;
 		text-align: left;
-		margin-left: 0px;
+		margin-left: -2px;
 	}
 	.container {
 		justify-content: center;
-		margin-left: 50px;
+		margin-left: 90px;
 	}
 	.l-mail h3, .l-email h3, .l-phone h3 {
 		margin-bottom: 10px;
 	}
 }
-
 
 
 @media only screen and (max-width:600px) {
@@ -768,6 +765,7 @@ footer {
   .nav-bar {
 	  display: grid;
 	  justify-content: center;
+	  grid-template-columns: 100%;
   }
   .left-header, .right-header ul {
 	padding-left: 0px;
@@ -776,7 +774,9 @@ footer {
   .left-header {
 	justify-self: center;
   }
-
+  .right-header ul {
+	  justify-content: space-around;
+  }
 
 	/* #active {
 		color: red;
@@ -787,10 +787,8 @@ footer {
 
 	.right-header a {
 		color: #ffffff;
-		padding-right: 5px;
 		text-decoration: none;
-		padding-left: 10px;
-		padding-right: 10px;
+		padding: 0 5px;
 	}
 
 	.top-bar {
@@ -817,7 +815,7 @@ footer {
 		padding: 0px 15px;
 		width: auto;
 		height: auto;
-		margin: 20px;
+		margin: 0 20px;
 		font-size: 18px;
 	}
 
@@ -838,7 +836,7 @@ footer {
 		margin-bottom: 0px;
 	}
 	#name, #number, #message, #email {
-		width: 90%;
+		width: 300px;
 		margin-bottom: 10px;
 		text-align: left;
 	}
@@ -855,10 +853,11 @@ footer {
 		text-align: center;
 	}
 	#email {
-		width: 85%;
+		width: 300px;
 	}
 	.btn-contact {
-		max-width: 295px;
+		width: 300px;
+		margin-left: -3px;
 	}
 	
 	.container {
@@ -880,6 +879,12 @@ footer {
 	}
 
 }
+@media only screen and (max-width:300px) {
+	#name, #number, #message, #email, .btn-contact {
+		width: 250px;
+	}
+}
+
 
 /* Footer */
 @media only screen and (min-width: 850px) {

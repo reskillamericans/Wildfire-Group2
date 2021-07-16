@@ -70,8 +70,6 @@ body{
   }
   
   .left-header {
-    width: 70px;
-    height: 70px;
     padding-left: 75px;
   }
   
@@ -87,10 +85,12 @@ body{
     color: #ffffff;
     padding-right: 75px;
     text-decoration: none;
+	transition: all 300ms ease-in-out;
   }
   
   .right-header a:hover {
     color: #ffd84d;
+	transform: scale(2);
   }
   
   #active {
@@ -113,7 +113,7 @@ body{
     background: url(./images/landing-images/hero-bg.svg);
     background-repeat: no-repeat;
     background-position:start center ;
-    background-size: auto 68%;
+    background-size: auto 75%;
 }
 
 .hero-text{
@@ -147,6 +147,7 @@ body{
     margin-left: 3.5vw;
     margin-top: 1vh;
     margin-bottom:5vh;
+	margin-right: 3.5vw;
     font-weight: 300;;
     font-size: 1.5rem;
     color: #FFFFFF;
@@ -563,27 +564,36 @@ footer {
 }
 
 /* ------------------ABOUT US EXTRA STYLES AND QUERIES FOR HEADER AND FOOTER  -------------------- */
-
-@media only screen and (max-width: 600px) {
-    /* Header */
-    .nav-bar {
+@media only screen and (max-width: 992px) {
+	.nav-bar {
         display: grid;
         justify-content: center;
+		grid-template-columns: 100%;
     }
+	.right-header ul {
+		padding-left: 75px;
+		justify-content: center;
+		padding-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 600px) {
+    /* Header */
+    
     
     .left-header, .right-header ul {
         padding-left: 0px;
-        padding-bottom: 10px;
         width: 100%;
     }
-
+	.right-header ul {
+		justify-content: space-around;
+	}
     .right-header{
-        margin-top: 2vh ;
+        margin-top: 2vh;
+		padding-bottom: 10px;
     }
     
     .right-header a {
-        padding-left: 10px;
-        padding-right: 10px;
+		padding: 0 5px;
     }
 	.hero-wrap {
 		height: 675px;
