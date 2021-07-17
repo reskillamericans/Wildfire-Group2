@@ -822,16 +822,17 @@ footer {
 	
 	}
 	.content h1 {
-		margin: 10px 0px;
+		margin: 10px 0 0;
 		padding: 0;
 		width: auto;
+		font-size: 25.6px;
 	}
 	.content h3 {
 		padding: 0px 15px;
 		width: auto;
 		height: auto;
 		margin: 0 20px;
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.contact-us, .form-content, #message, #email, .name-number {
