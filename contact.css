@@ -109,7 +109,7 @@ body {
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 1.8em;
   line-height: 34px;
   color: #ffffff;
 }
@@ -123,7 +123,7 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: #000000;
+  color: #180126;
   margin-top: 25px;
   border: none;
   border-radius: 4px;
@@ -150,7 +150,7 @@ body {
   font-size: 28px;
   line-height: 33px;
   letter-spacing: -0.2%;
-  color: #000000;
+  color: #180126;
 }
 
 .form-content {
@@ -174,7 +174,7 @@ body {
 }
 
 #name {
-  width: 330px;
+  width: 326px;
   height: 30px;
 	border: 1px solid #b8b484;
 	
@@ -237,7 +237,7 @@ body {
 }
 
 #number {
-  width: 330px;
+  width: 326px;
   height: 30px;
 	border: 1px solid #b8b484;
 	margin-left: 10px;
@@ -246,7 +246,6 @@ body {
 #message {
   width: 665px;
   height: 146px;
-  margin-left: 350px;
   border: 1px solid #b8b484;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -257,7 +256,6 @@ body {
 #email {
   width: 435px;
   height: 30px;
-  margin-left: 350px;
   margin-bottom: 50px;
 	border: 1px solid #b8b484;
 }
@@ -279,7 +277,7 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-  color: #000000;
+  color: #180126;
   text-align: center;
   border-radius: 5px;
   border: none;
@@ -299,11 +297,12 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  margin-left: 350px;
+  margin-left: -35px;
+  color: #180126;
+  justify-content: center;
 }
 
 .l-mail h3 {
-  color: #000000;
   width: 173px;
   height: 19px;
   font-family: 'Rubik';
@@ -314,7 +313,6 @@ body {
 }
 
 .l-mail p {
-  color: #000000;
   width: 203px;
   height: auto;
   font-family: 'Rubik';
@@ -325,7 +323,6 @@ body {
 }
 
 .l-email h3 {
-  color: #000000;
   width: 173px;
   height: 19px;
   font-family: 'Rubik';
@@ -337,7 +334,6 @@ body {
 }
 
 .l-email p {
-  color: #000000;
   width: 203px;
   height: 57px;
   font-family: 'Rubik';
@@ -349,7 +345,6 @@ body {
 }
 
 .l-phone h3 {
-  color: #000000;
   width: 173px;
   height: 19px;
   font-family: 'Rubik';
@@ -361,7 +356,6 @@ body {
 }
 
 .l-phone p {
-  color: #000000;
   height: 57px;
   font-family: 'Rubik';
   font-style: normal;
@@ -376,6 +370,18 @@ body {
 input, #textarea {
 	font-size: 16px;
 }
+.contact-us, .form-content, .name-number {
+	margin-left: 15px;
+	margin-right: 15px;
+	width: auto;
+	text-align: center;
+}
+.message, .subscribe {
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+}
+
 
 /*footer*/
 
@@ -628,7 +634,7 @@ footer {
 		text-align: center;
 	}
 	
-	br {
+	.content br {
 		display: none;
 	}
 	.form-content {
@@ -642,6 +648,9 @@ footer {
 	#name {
 		margin-right: 10px;
 	}
+	#name, #number {
+		width: 331px;
+	}
 	#message {
 		width: 685px;
 		margin-bottom: 10px;
@@ -654,9 +663,9 @@ footer {
 		text-align: center;
 	}
 	#email {
-		width: 435px;
+		width: 440px;
 		text-align: left;
-		margin-left: -5px;
+		margin-left: 0;
 	}
 	.container {
 		justify-content: center;
@@ -717,7 +726,7 @@ footer {
 	}
 	
 	
-	br {
+	.content br, form br {
 		display: none;
 	}
 	.form-content {
@@ -749,10 +758,16 @@ footer {
 	}
 	.container {
 		justify-content: center;
-		margin-left: 90px;
+		margin-left: 40px;
 	}
 	.l-mail h3, .l-email h3, .l-phone h3 {
-		margin-bottom: 10px;
+		font-size: 18px;
+	}
+	.container p {
+		font-size: 14px;
+	}
+	.l-phone h3, .l-phone p, .l-email h3, .l-email p {
+		margin-left: 0;
 	}
 }
 
@@ -826,7 +841,7 @@ footer {
 		text-align: center;
 	}
 	
-	br {
+	.content br, form br {
 		display: none;
 	}
 	.form-content {
@@ -870,18 +885,24 @@ footer {
 	.l-mail h3, .l-email p, .l-email h3, .l-phone p, .l-phone h3 {
 		margin-left: 0px;
 		width: auto;
-		margin-top: 10px;
+		margin-top: 15px;
 		margin-bottom: 10px;
 		height: auto;
+	}
+	.container p {
+		margin-top: -20px;
 	}
 	.l-phone {
 		margin-bottom: 20px;
 	}
 
 }
-@media only screen and (max-width:300px) {
+@media only screen and (max-width:350px) {
 	#name, #number, #message, #email, .btn-contact {
 		width: 250px;
+	}
+	.message, #email {
+		margin-left: 0;
 	}
 }
 
