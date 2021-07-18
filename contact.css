@@ -90,7 +90,6 @@ body {
 
 .hero h1 {
   width: 627px;
-  height: 67px;
   margin-left: 100px;
   padding-top: 130px;
   font-family: 'Rubik', sans-serif;
@@ -103,14 +102,13 @@ body {
 
 .hero h3 {
   width: 574px;
-  height: 68px;
   margin-left: 100px;
-  margin-top: 60px;
+  margin-top: 15px;
   font-family: 'Rubik', sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 1.8em;
-  line-height: 34px;
+  line-height: 1.5;
   color: #ffffff;
 }
 
@@ -140,25 +138,17 @@ body {
 }
 
 .contact-us {
-  width: 156px;
-  height: 33px;
   padding-top: 25px;
-  margin-left: 350px;
   font-family: 'Rubik';
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
-  line-height: 33px;
   letter-spacing: -0.2%;
   color: #180126;
 }
 
 .form-content {
-  width: 666px;
-  height: 57px;
-  padding-top: 23px;
-  margin-left: 350px;
-  margin-bottom: 50px;
+  padding: 15px 0;
   font-family: 'Rubik';
   font-weight: normal;
   font-style: normal;
@@ -370,7 +360,13 @@ body {
 input, #textarea {
 	font-size: 16px;
 }
-.contact-us, .form-content, .name-number {
+.info {
+	display: grid;
+	justify-content: center;
+	text-align: left;
+	width: auto;
+}
+.name-number {
 	margin-left: 15px;
 	margin-right: 15px;
 	width: auto;
@@ -634,16 +630,19 @@ footer {
 		text-align: center;
 	}
 	
-	.content br {
+	.content br, .form-content br {
 		display: none;
 	}
 	.form-content {
-		padding-bottom: 10px;
+		padding-bottom: 20px;
 		height: auto;
-		margin-top: 10px;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		font-size: 22px;
 		line-height: 26px;
+		margin-left: 60px;
+		margin-right: 60px;
+		width: auto;
+		text-align: center;
 	}
 	#name {
 		margin-right: 10px;
@@ -725,16 +724,16 @@ footer {
 		text-align: center;
 	}
 	
-	
 	.content br, form br {
 		display: none;
 	}
 	.form-content {
-		padding-bottom: 10px;
+		padding: 5px 0 15px 0;
 		height: auto;
-		margin-top: 10px;
-		margin-bottom: 0px;
+		margin-top: 0;
 		font-size: 16px;
+		margin-left: 60px;
+		margin-right: 60px;
 	}
 	#name, #number {
 		width: 258px;
@@ -774,7 +773,7 @@ footer {
 
 @media only screen and (max-width:600px) {
   .btn {
-	width: auto;
+	justify-self: center;
 	margin: 10px 20px 40px 20px;
   }
   .nav-bar {
@@ -828,7 +827,7 @@ footer {
 		font-size: 25.6px;
 	}
 	.content h3 {
-		padding: 0px 15px;
+		padding: 10px 15px 5px 15px;
 		width: auto;
 		height: auto;
 		margin: 0 20px;
