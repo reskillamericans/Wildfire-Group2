@@ -56,6 +56,7 @@ body {
   color: #ffffff;
   padding-top: 20px;
   box-sizing: initial;
+  height: auto;
 }
 
 .top-bar {
@@ -94,31 +95,38 @@ body {
   padding: 5px 75px;
 }
 
+.left-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .left-content h1 {
   font-size: 3.2em;
   font-weight: bold;
-  margin: 20px 0 0 30px;
-  padding-top: 50px;
+  margin: -60px 0 0 30px;
+  padding-top: 0px;
+  text-align: left;
 }
 
 .left-content p {
-  font-size: 1.8rem;
+  font-size: 1.8em;
   font-weight: 300;
   line-height: 1.5;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   margin: 5px -50px -5px 30px;
 }
 
 .left-content a {
   font-size: 14px;
   font-weight: bold;
-  color: black;
+  color: #180126;
   text-decoration: none;
   padding: 20px 50px;
   cursor: pointer;
   border-radius: 5px;
   background-color: #ffd84d;
   margin-left: 30px;
+  width: 140px;
 }
 
 .left-content a:hover {
@@ -132,13 +140,14 @@ body {
 
 .phone-img {
   padding-left: 120px;
-  width: 70%;
+  width: 400px;
 }
 
 /* Middle Container */
 .middle-container {
   text-align: center;
-  padding: 0px 75px 50px;
+  padding: 10px 75px 50px;
+  color: #180126;
 }
 
 .middle-container h2 {
@@ -809,9 +818,11 @@ footer {
 }
 
 /* Ipad-Pro Screen Size */
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1120px) {
 	.hero-container {
     background-size: cover;
+    height: auto;
+    width: 100%;
   }
   .content {
 	  padding-top: 60px;
@@ -827,6 +838,10 @@ footer {
   }
   .left-content a {
 	  margin-left: 10px;
+    padding: 15px 50px;
+  }
+  .phone-img {
+    width: 300px;
   }
 
   .people h2,
@@ -865,7 +880,7 @@ footer {
 	  display: none;
   }
   .content {
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 60% 40%;
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -881,11 +896,12 @@ footer {
   }
   .left-content a {
 	  margin-left: 10px;
+    height: 17px;
   }
   .phone-img {
-    padding-top: 50px;
     padding-left: 50px;
-    width: 100%;
+    width: 250px;
+    margin-top: -25px;
   }
 
   .middle-container {
@@ -953,24 +969,29 @@ footer {
     padding: 0;
     text-align: center;
   }
-
+  .left-content {
+    display: grid;
+    justify-items: center;
+  }
   .left-content h1 {
-    font-size: 22px;
+    font-size: 25.6px;
     margin: 0px;
   }
 
   .left-content p {
     font-size: 16px;
-    padding: 0px 15px 30px 15px;
-	margin: 0;
+    padding: 10px 15px 15px;
+	  margin: 0;
   }
 
   .left-content a {
     margin-left: 0;
+    height: 25px;
   }
   .phone-img {
-    height: 30%;
-    padding: 40px 0px 30px 0px;
+    width: 140px;
+    padding: 40px 0px 15px 0px;
+    justify-self: center;
   }
 
   /* Middle Container */
