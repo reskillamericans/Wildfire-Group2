@@ -16,6 +16,10 @@
 			src="https://kit.fontawesome.com/a8d251cb18.js"
 			crossorigin="anonymous"
 		></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 
@@ -66,32 +70,15 @@
 					Please first review the previously asked most popular questions before
 					submitting a new question
 				</h2>
-				<form class="hero-input" method="get">
-					<input type="text" id="hero-input-area" name="q" placeholder="Search" value="{{query}}"/>
+				<form class="hero-input" id="hero-form">
+					<input type="text" id="hero-input-area" name="q" placeholder="Search" />
 					<button class="hero-input-button" type="submit">Submit</button>
 				</form>
 			</div>
 		</section>
 		<main>
-			<div class="accordian">
-				{% if results is None %}	
-						{% for question in questions %}
-							
-							{% include './snippets/faq_question_snippet.html' %}
-
-						{% endfor %}
-				{% elif results|length == 0 %}
-					<div class="accordian-item">
-						<h2>No results</h2>
-						<p>There were no results matching: {{query}}.</p>
-					</div>
-				{% else %}
-					{% for question in results %}
-							
-						{% include './snippets/faq_question_snippet.html' %}
-
-					{% endfor %}
-				{% endif %}
+			<div class="accordian" id="replaceable-content">
+				{% include './snippets/faq_question_snippet.html' %}
 			</div>
 		</main>
 		<footer class="mobile-footer">
@@ -215,6 +202,7 @@
 				</div>
 			</div>
 		</footer>
-		<script src="{% static './fireapp/js/app.js' %}"></script>
+		<script type="text/javascript" src="{% static './fireapp/js/app.js' %}"></script>
+  		<script type="text/javascript" src="{% static './fireapp/js/faq_search.js' %}"></script>
 	</body>
 </html>

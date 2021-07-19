@@ -1,15 +1,18 @@
+from django.conf import settings
+from django.contrib import messages
+from django.contrib.auth.models import User
 from django.contrib.messages.api import success
 from django.contrib.messages.constants import SUCCESS
 from django.core.checks import messages
-from django.conf import settings
-from django.shortcuts import redirect, render
-from .models import Faq
-from django.contrib.auth.models import User
-from .forms import NewsletterForm, SubmitQuestion
 from django.core.mail import send_mail
-from django.contrib import messages
-from .helper import newsletter
 from django.db.models import Q
+from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
+from .forms import NewsletterForm, SubmitQuestion
+from .helper import newsletter
+from .models import Faq
 
 
 # Newsletter view
@@ -39,37 +42,32 @@ def about_us(request):
 def faq(request):
 
     context = {
-        'questions' : Faq.objects.all(),
         'newsletter_form': NewsletterForm(),
     }
+    url_parameter = request.GET.get('q')
 
-    if request.GET:
+    if url_parameter:
+       questions = Faq.objects.filter(title__icontains=url_parameter)
+    else:
+        questions = Faq.objects.all() 
 
-        if request.GET['q']:
-            query = request.GET['q']
-            context['query'] = str(query)
-
-            context['results'] = get_faq_queryset(query)
+    context['questions'] = questions
 
     if newsletter(request):
         return redirect("homepage")
 
-    return render(request, 'fireapp/faq.html', context)
-
-def get_faq_queryset(query=None):
-    queryset = []
-    if query is None:
-        return None    
-    queries = query.split(" ") # What to do = [What, to, do]
-    for q in queries:
-        questions = Faq.objects.filter(
-            Q(title__icontains=q)    
+    # if it is an ajax request, re-load only the question snippet
+    if request.is_ajax():
+        html = render_to_string(
+            template_name='fireapp/snippets/faq_question_snippet.html',
+            context={'questions': questions}
         )
-        queryset.extend(questions)
-        
-    return list(set(queryset))
 
-    
+        data_dict = {'html_from_view': html}
+        return JsonResponse(data=data_dict, safe=False)
+        
+    # if it is a regular request, load the whole page
+    return render(request, 'fireapp/faq.html', context)
 
 # Contact Us
 def contact(request):
