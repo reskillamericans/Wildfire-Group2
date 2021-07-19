@@ -615,7 +615,7 @@ footer {
 		padding: 0px 15px;
 		width: auto;
 		height: auto;
-		margin: 20px;
+		margin: 10px 20px 20px;
 		font-size: 22px;
 	}
 	.btn {
@@ -686,12 +686,18 @@ footer {
 		justify-content: center;
 		grid-template-columns: 100%;
 	}
+	.left-header {
+		padding-left: 0;
+		padding-bottom: 10px;
+	}
+	.right-header a {
+		padding: 0 5px;
+	  }
 	.hero {
 		height: auto;
 	}
 	.right-header ul {
-		justify-content: center;
-		padding-left: 75px;
+		justify-content: space-around;
 		padding-bottom: 10px;
 	}
 	.content {
@@ -757,7 +763,7 @@ footer {
 	}
 	.container {
 		justify-content: center;
-		margin-left: 40px;
+		margin-left: 20px;
 	}
 	.l-mail h3, .l-email h3, .l-phone h3 {
 		font-size: 18px;
@@ -766,7 +772,7 @@ footer {
 		font-size: 14px;
 	}
 	.l-phone h3, .l-phone p, .l-email h3, .l-email p {
-		margin-left: 0;
+		margin-left: -10px;
 	}
 }
 
@@ -863,9 +869,13 @@ footer {
 	}
 	.message {
 		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
 	}
 	.subscribe {
 		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
 	}
 	#email {
 		width: 300px;
@@ -900,9 +910,6 @@ footer {
 @media only screen and (max-width:350px) {
 	#name, #number, #message, #email, .btn-contact {
 		width: 250px;
-	}
-	.message, #email {
-		margin-left: 0;
 	}
 }
 

@@ -818,7 +818,7 @@ footer {
 }
 
 /* Ipad-Pro Screen Size */
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 1125px) {
 	.hero-container {
     background-size: cover;
     height: auto;
@@ -914,11 +914,10 @@ footer {
 
   .people h2,
   .proj-desc h2 {
-    margin: 0px 0px 24.9px;
+    margin: 0 0 24.9px;
   }
-
-  .proj-desc img {
-    width: 25%;
+  .proj-desc p {
+    margin-right: 0;
   }
 
   #one,
@@ -934,7 +933,7 @@ footer {
 }
 
 /* Mobile Screen Sizes */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
   /* Header */
   .nav-bar {
 		display: grid;
