@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Frequently Asked Questions</title>
 		<link rel="stylesheet" href="{% static './fireapp/css/faq.css' %}"/>
+		<link rel="shortcut icon" type="image/svg" href="{% static '/fireapp/images/group 2 logo.svg' %}" />
 		<link rel="preconnect" href="https://fonts.gstatic.com"/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap"
@@ -16,6 +17,10 @@
 			src="https://kit.fontawesome.com/a8d251cb18.js"
 			crossorigin="anonymous"
 		></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 
@@ -66,80 +71,15 @@
 					Please first review the previously asked most popular questions before
 					submitting a new question
 				</h2>
-				<!-- <div class="hero-input">
-					<input type="text" name="hero-input-area" id="hero-input-area" />
-					<button class="hero-input-button">Submit</button>
-				</div> -->
+				<form class="hero-input" id="hero-form">
+					<input type="text" id="hero-input-area" name="q" placeholder="Search" />
+					<button class="hero-input-button" type="submit">Submit</button>
+				</form>
 			</div>
 		</section>
 		<main>
-			<div class="accordian">
-				{% for question in questions %}
-					<div class="accordian-item" id="{{ question.id }}">
-						<a class="accordian-link" href="#{{ question.id }}">
-							{{ question.title }}
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-								class="plus-sign"
-							>
-								<path
-									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M12 8V16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8 12H16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-								class="minus-sign"
-							>
-								<path
-									d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-								<path
-									d="M8 12H16"
-									stroke="black"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</a>
-						<div class="answer">
-							<p>
-								{{ question.response }}
-							</p>
-						</div>
-					</div>
-				{% endfor %}
+			<div class="accordian" id="replaceable-content">
+				{% include './snippets/faq_question_snippet.html' %}
 			</div>
 		</main>
 		<footer class="mobile-footer">
@@ -172,7 +112,7 @@
 					<div class="partners">
 						<h2>Partners</h2>
 						<img 
-							src="{% static './images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
+							src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
 							alt="Reskill Americans Logo"
 						/>
 					</div>
@@ -263,6 +203,7 @@
 				</div>
 			</div>
 		</footer>
-		<script src="{% static './fireapp/js/app.js' %}"></script>
+		<script type="text/javascript" src="{% static './fireapp/js/app.js' %}"></script>
+  		<script type="text/javascript" src="{% static './fireapp/js/faq_search.js' %}"></script>
 	</body>
 </html>
