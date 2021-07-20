@@ -52,11 +52,12 @@ body {
 .hero-container {
   background-image: url(images/about-us-images/bg-image.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: center top;
+  background-size: 100% auto;
   color: #ffffff;
   padding-top: 20px;
   box-sizing: initial;
-  height: auto;
+  /* max-height: 750px; */
 }
 
 .top-bar {
@@ -146,13 +147,14 @@ body {
 /* Middle Container */
 .middle-container {
   text-align: center;
-  padding: 10px 75px 50px;
+
+  padding: 30px 75px 50px;
   color: #180126;
 }
 
 .middle-container h2 {
   font-size: 30px;
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 /* Carousel */
@@ -818,7 +820,7 @@ footer {
 }
 
 /* Ipad-Pro Screen Size */
-@media only screen and (max-width: 1120px) {
+@media only screen and (max-width: 1125px) {
 	.hero-container {
     background-size: cover;
     height: auto;
@@ -914,11 +916,10 @@ footer {
 
   .people h2,
   .proj-desc h2 {
-    margin: 0px 0px 24.9px;
+    margin: 0 0 24.9px;
   }
-
-  .proj-desc img {
-    width: 25%;
+  .proj-desc p {
+    margin-right: 0;
   }
 
   #one,
@@ -934,7 +935,7 @@ footer {
 }
 
 /* Mobile Screen Sizes */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
   /* Header */
   .nav-bar {
 		display: grid;
