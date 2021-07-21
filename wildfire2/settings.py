@@ -18,7 +18,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 if not DEBUG:
-    ALLOWED_HOSTS = ['wildfire2.herokuapp.com','127.0.0.1','localhost']
+    ALLOWED_HOSTS = ['wildfire2.herokuapp.com']
 else:
     ALLOWED_HOSTS = []
 
