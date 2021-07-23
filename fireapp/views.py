@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.messages.api import success
 from django.contrib.messages.constants import SUCCESS
-from django.core.checks import messages
 from django.core.mail import send_mail
 from django.db.models import Q
 from django.shortcuts import redirect, render
@@ -95,7 +94,6 @@ def contact(request):
                 return redirect("homepage")
 
     context = {
-        'contact_form': SubmitQuestion(),
         'newsletter_form': NewsletterForm()
         }
     return render(request, 'fireapp/contact.html', context)

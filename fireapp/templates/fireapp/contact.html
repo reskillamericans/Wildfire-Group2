@@ -46,7 +46,7 @@ crossorigin="anonymous"
       <ul>
         <li><a href="{% url 'homepage' %}">Home</a></li>
         <li><a href="{% url 'about_us' %}">About Us</a></li>
-        <li><a href="{% url 'contact' %}" id="active2">Contact Us</a></li>
+        <li><a href="{% url 'contact' %}">Contact Us</a></li>
         <li><a href="{% url 'faq' %}">FAQ</a></li>
       </ul>
     </div>
@@ -60,14 +60,27 @@ crossorigin="anonymous"
   </section>
 
   <section>
-    <form method= "post">
-      <h3 class="contact-us">Contact Us</h3>
-      <p class="form-content">We ask that you please check the FAQ page to see if your question has already been <br> asked. Response times will vary depending on the questions but we will try to reply within <br> 24 to 48 hours.</p>
-      
+    <form method= "post" id="contact-form">
       {% csrf_token %}
-      {{ contact_form }}
-       
-      <button type="Submit" class="btn-contact subscribe">Submit</button> 
+      <div class="info">
+        <h3 class="contact-us">Contact Us</h3>
+        <p class="form-content">We ask that you please check the FAQ page to see if your question has already been <br> asked. Response times will vary depending on the questions but we will try to reply within <br> 24 to 48 hours.</p>
+        </div>
+          <div class="name-number">
+            <input type="name" name="full_name" id="name" placeholder="Full Name" />
+            
+              <input type="number" name="number" id="number" placeholder="Phone Number (optional)" />
+          </div>
+  
+          <div class="message">
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Contact us for anything related to the website or app."></textarea>
+          </div>
+  
+          <div class="subscribe">
+            <input type="email" name="email" id="email" placeholder="Email@outlook.com" />
+          
+            <button type="Submit" class="btn-contact">Submit</button> 
+          </div>
     </form>
     </section>
 
