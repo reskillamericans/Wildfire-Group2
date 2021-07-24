@@ -18,7 +18,6 @@ from .models import Faq
 # Newsletter view
 def index(request):
     template_name = "fireapp/index.html"
-
     if newsletter(request):
         return redirect("homepage")
 
