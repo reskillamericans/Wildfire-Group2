@@ -2,7 +2,7 @@ const user_input = $('#hero-input-area') //search bar
 const search_submit = $('#hero-form') //search bar form submit
 const questions_div = $('#replaceable-content') // div containing the questions
 const endpoint = '/faq/' // url to the faq page
-const delay_by_in_ms = 400
+const delay_by_in_ms = 700
 let scheduled_function = false
 
 let ajax_call = function (endpoint, request_parameters) {
