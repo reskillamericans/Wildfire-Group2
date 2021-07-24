@@ -118,9 +118,12 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 90%;
+	width: 100%;
 	margin: auto;
-	min-height: 15vh;
+	min-height: 16px;
+}
+.logo {
+	padding-left: 35px;
 }
 .nav-ul {
 	font-weight: bold;
@@ -128,9 +131,10 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding-right: 35px;
 
 	width: 100%;
-	max-width: 460px;
+	max-width: 500px;
 }
 .nav-ul li a {
 	font-size: 1.6rem;
@@ -167,7 +171,7 @@ nav {
 }
 
 .hero-wrapper h1 {
-	font-size: 2rem;
+	font-size: 32px;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 0.5rem;
@@ -229,7 +233,54 @@ main {
 	margin: auto;
 	margin-bottom: 6rem;
 }
-.accordian-item {
+.accordian-border {
+	width: 100%;
+	border-bottom: var(--drk-gry) 2px solid;
+	margin-bottom: 2rem;
+}
+
+button.questions,
+button.questions:active {
+	width: 100%;
+	background: transparent;
+	text-align: left;
+	padding: 15px 20px;
+	font-size: 1.6rem;
+	color: #000000;
+	font-weight: bold;
+	line-height: 19px;
+	cursor: pointer;
+	outline: none;
+}
+/* button.questions:hover {
+	color: #3f3f3f;
+} */
+button.questions::after {
+	content: "\f055";
+	font-family: "fontawesome";
+	font-size: 20px;
+	float: right;
+}
+button.questions.is-open::after {
+	content: "\f056";
+	font-family: "fontawesome";
+	font-size: 20px;
+	float: right;
+}
+.accordian-content {
+	padding: 0px 20px;
+	font-size: 1.6rem;
+	line-height: 120%;
+	letter-spacing: 0.02em;
+	max-height: 0;
+	overflow: hidden;
+	transition: 400ms ease-in-out;
+}
+.accordian-content p {
+	padding: 20px 0px;
+}
+
+/* .accordian-item {
 	padding-bottom: 2rem;
 	border-bottom: var(--drk-gry) 2px solid;
 	margin-bottom: 1.5rem;
@@ -276,7 +327,7 @@ main {
 }
 .minus-sign {
 	display: none;
-}
+} */
 
 /* ########## MOBILE FOOTER ########## */
 .web-footer {
@@ -492,21 +543,23 @@ footer {
 		/* border: green solid 1px; */
 	}
 	.hero-wrapper h1 {
-		font-size: var(--h1);
+		font-size: 32px;
 		font-weight: 700;
 		text-align: left;
 		margin-bottom: 1rem;
+		margin-left: -10px;
 	}
 	.hero-wrapper h2 {
 		font-size: var(--h2);
 		font-weight: 300;
 		line-height: 120%;
 		text-align: left;
+		margin-left: -10px;
 	}
 	.hero-input {
 		display: flex;
 		flex-direction: row;
-
+		margin-left: -10px;
 		width: 100%;
 		max-width: 835px;
 		/* border: black solid 1px; */
@@ -759,5 +812,20 @@ footer {
 		border-right: 1px solid rgba(255, 255, 255, 0.5);
 		width: 1px;
 		height: 100px;
+	}
+}
+@media only screen and (max-width: 992px) {
+	.logo {
+		padding-left: 0;
+	}
+	.nav-ul {
+		padding-right: 0;
+		padding-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	/* Header */
+	.nav-ul {
+		padding: 0 5px 10px 5px;
 	}
 }
