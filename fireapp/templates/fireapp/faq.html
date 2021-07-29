@@ -6,8 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Frequently Asked Questions</title>
-		<link rel="stylesheet" href="{% static './fireapp/css/faq.css' %}"/>
-		<link rel="shortcut icon" type="image/svg" href="{% static '/fireapp/images/group 2 logo.svg' %}" />
+		<link rel="stylesheet" href="{% static 'fireapp/css/faq.css' %}"/>
+		<link rel="shortcut icon" type="image/svg" href="{% static 'fireapp/images/group 2 logo.svg' %}" />
 		<link rel="preconnect" href="https://fonts.gstatic.com"/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap"
@@ -79,7 +79,7 @@
 		</section>
 		<main>
 			<div class="accordian" id="replaceable-content">
-				{% include './snippets/faq_question_snippet.html' %}
+				{% include 'snippets/faq_question_snippet.html' %}
 			</div>
 		</main>
 		<footer class="mobile-footer">
@@ -112,7 +112,7 @@
 					<div class="partners">
 						<h2>Partners</h2>
 						<img 
-							src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
+							src="{% static 'fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
 							alt="Reskill Americans Logo"
 						/>
 					</div>
@@ -167,7 +167,7 @@
 			</div>
 			<div class="web-footer-container2">
 				<div class="web-footer-fire">
-					<img src="{% static './fireapp/images/group 2 logo.svg' %}" alt="logo" />
+					<img src="{% static 'fireapp/images/group 2 logo.svg' %}" alt="logo" />
 
 					<div class="fire-alert box">
 						<h3 class="fire-h3">Fire Alert</h3>
@@ -186,7 +186,7 @@
 					<div class="partners box">
 						<h2>Partners</h2>
 						<img
-							src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
+							src="{% static 'fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}"
 							alt="Reskill Americans Logo"
 						/>
 					</div>
@@ -203,8 +203,8 @@
 				</div>
 			</div>
 		</footer>
-		<script type="text/javascript" src="{% static './fireapp/js/app.js' %}"></script>
-  		<script type="text/javascript" src="{% static './fireapp/js/faq_search.js' %}"></script>
-		<script type="text/javascript" src="{% static './fireapp/js/faq.js' %}"></script>
+		<script type="text/javascript" src="{% static 'fireapp/js/app.js' %}"></script>
+  		<script type="text/javascript" src="{% static 'fireapp/js/faq_search.js' %}"></script>
+		<script type="text/javascript" src="{% static 'fireapp/js/faq.js' %}"></script>
 	</body>
 </html>

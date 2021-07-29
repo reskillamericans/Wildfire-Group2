@@ -8,7 +8,6 @@ admin.site.site_header="Reskill Wildifre Project"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', fireapp_views.index, name="homepage"),
     path('', include('fireapp.urls')),
 ]
 

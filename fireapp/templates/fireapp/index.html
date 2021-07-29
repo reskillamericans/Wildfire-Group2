@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href="{% static './css/style.css' %}"></link>
+    <link rel='stylesheet' href="{% static 'css/style.css' %}"></link>
     <title>Wildfire Landing Page</title>
 </head>
 
@@ -30,7 +30,7 @@
     <!-- HEADER COMPONENT -->
     <header class="nav-bar">
         <div class="left-header">
-          <a href="{% url 'homepage' %}"><img src="{% static './fireapp/images/contact-images/group 2 logo.svg' %}" alt="logo" /></a> 
+          <a href="{% url 'homepage' %}"><img src="{% static 'fireapp/images/contact-images/group 2 logo.svg' %}" alt="logo" /></a> 
         </div>
         <div class="right-header">
              <ul>
@@ -50,7 +50,7 @@
         <div class='hero-wrap'>
             <div class="hero-text">
                 <div class="title">
-                    <img src="{% static './fireapp/images/landing-images/navbar-logo.svg' %}" alt="Logo"> </img>
+                    <img src="{% static 'fireapp/images/landing-images/navbar-logo.svg' %}" alt="Logo"> </img>
                     <h1>Fire Alert</h1>
                 </div>
                 <p>Stay up to date on the status of nearby wildfires, give or receive help, get live warnings and updates of ongoing fires.</p>
@@ -63,7 +63,7 @@
 
     <section id="feature-section">
         <div class="top">
-            <img src="{% static './fireapp/images/landing-images/tilted-phone-map.svg' %}" alt="Feed feature Photo"> </img>
+            <img src="{% static 'fireapp/images/landing-images/tilted-phone-map.svg' %}" alt="Feed feature Photo"> </img>
             <div class="text-wrap">
                 <div class="text-image">
                     <h1>Stay up to date on nearby fires</h1>
@@ -84,7 +84,7 @@
                     <button>Try it Today</button>
                 </div>
             </div>
-            <img src="{% static './fireapp/images/landing-images/upright-phone-map.svg' %}" alt="Profile feature photo "> </img>
+            <img src="{% static 'fireapp/images/landing-images/upright-phone-map.svg' %}" alt="Profile feature photo "> </img>
         </div>
     </section>
 
@@ -114,7 +114,7 @@
                 </ul>
                 <div class="partners">
                     <h2>Partners</h2>
-                    <a href="https://www.reskillamericans.org/" target="_blank"><img src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}" alt="Reskill Americans Logo" /></a>
+                    <a href="https://www.reskillamericans.org/" target="_blank"><img src="{% static 'fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}" alt="Reskill Americans Logo" /></a>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
         </div>
         <div class="web-footer-container2">
             <div class="web-footer-fire">
-                <img src="{% static './fireapp/images/group 2 logo.svg' %}" alt="logo" />
+                <img src="{% static 'fireapp/images/group 2 logo.svg' %}" alt="logo" />
 
                 <div class="fire-alert box">
                     <h3 class="fire-h3">Fire Alert</h3>
@@ -190,7 +190,7 @@
                 <div class="side-border"></div>
                 <div class="partners box">
                     <h2>Partners</h2>
-                    <a href="https://www.reskillamericans.org/" target="_blank"><img src="{% static './fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}" alt="Reskill Americans Logo" /></a>
+                    <a href="https://www.reskillamericans.org/" target="_blank"><img src="{% static 'fireapp/images/RESKILL-AMERICANS-ICON-1-small 1.png' %}" alt="Reskill Americans Logo" /></a>
                 </div>
                 <div class="side-border"></div>
                 <div class="follow box">
@@ -205,7 +205,7 @@
             </div>
         </div>
     </footer>
-    <script src="{% static './fireapp/js/app.js' %}"></script>
+    <script src="{% static 'fireapp/js/app.js' %}"></script>
 </body>
 
 </html>
