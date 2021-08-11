@@ -1,3 +1,5 @@
 Pipfile
 requirements.txt
 .env
+*__pycache__*
+wildfire2/__pycache__
