@@ -143,7 +143,7 @@ main {
     /* max-width: 1600px; */
     overflow: hidden;
     height: 100vh;
-    background: url(../images/images404/fireman-bg.png) no-repeat fixed center/cover;
+    /* background: url(../images/images404/fireman-bg.png) no-repeat fixed center/cover; */
 }
 
 .container {
